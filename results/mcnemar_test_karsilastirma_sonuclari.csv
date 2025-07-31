@@ -1,0 +1,14 @@
+Model1,FS1,Model2,FS2,N10_M1_Doğru_M2_Yanlış,N01_M1_Yanlış_M2_Doğru,Statistic,P_Value,Yorum
+LinearSVM,TFIDF_Temel,LinearSVM,TFIDF_Gelişmiş,19,27,1.065217391304348,0.3020282281097738,Performanslar arasında istatistiksel olarak anlamlı bir fark YOKTUR (p >= 0.05).
+RandomForest,TFIDF_Temel,RandomForest,TFIDF_Gelişmiş,19,13,0.78125,0.3767591178115821,Performanslar arasında istatistiksel olarak anlamlı bir fark YOKTUR (p >= 0.05).
+NaiveBayes,TFIDF_Temel,NaiveBayes,TFIDF_Gelişmiş,5,18,6.260869565217392,0.012343360353455044,Performanslar arasında istatistiksel olarak ANLAMLI bir fark vardır (p < 0.05).
+LinearSVM (W2V),WordEmbedding_Temel,LinearSVM (FT),WordEmbedding_Gelişmiş,62,215,83.40794223826715,6.675326391343471e-20,Performanslar arasında istatistiksel olarak ANLAMLI bir fark vardır (p < 0.05).
+RandomForest (W2V),WordEmbedding_Temel,RandomForest (FT),WordEmbedding_Gelişmiş,30,40,1.1571428571428573,0.28205887576155575,Performanslar arasında istatistiksel olarak anlamlı bir fark YOKTUR (p >= 0.05).
+NaiveBayes (W2V),WordEmbedding_Temel,NaiveBayes (FT),WordEmbedding_Gelişmiş,595,672,4.558800315706393,0.03275000648421355,Performanslar arasında istatistiksel olarak ANLAMLI bir fark vardır (p < 0.05).
+LinearSVM,TFIDF_Gelişmiş,RandomForest,TFIDF_Gelişmiş,43,17,10.416666666666666,0.0012488309880884258,Performanslar arasında istatistiksel olarak ANLAMLI bir fark vardır (p < 0.05).
+LinearSVM,TFIDF_Gelişmiş,NaiveBayes,TFIDF_Gelişmiş,59,34,6.193548387096774,0.012821684691391541,Performanslar arasında istatistiksel olarak ANLAMLI bir fark vardır (p < 0.05).
+RandomForest,TFIDF_Gelişmiş,NaiveBayes,TFIDF_Gelişmiş,60,61,0.0,1.0,Performanslar arasında istatistiksel olarak anlamlı bir fark YOKTUR (p >= 0.05).
+LinearSVM,WordEmbedding_Gelişmiş,RandomForest,WordEmbedding_Gelişmiş,41,108,29.23489932885906,6.411394433698238e-08,Performanslar arasında istatistiksel olarak ANLAMLI bir fark vardır (p < 0.05).
+LinearSVM,WordEmbedding_Gelişmiş,NaiveBayes_Gaussian,WordEmbedding_Gelişmiş,640,81,431.8502080443828,6.429725171155525e-96,Performanslar arasında istatistiksel olarak ANLAMLI bir fark vardır (p < 0.05).
+RandomForest,WordEmbedding_Gelişmiş,NaiveBayes_Gaussian,WordEmbedding_Gelişmiş,646,20,586.524024024024,1.428848769775436e-129,Performanslar arasında istatistiksel olarak ANLAMLI bir fark vardır (p < 0.05).
+LinearSVM,TFIDF_Gelişmiş,RandomForest,WordEmbedding_Gelişmiş,39,28,1.492537313432836,0.22182319830680236,Performanslar arasında istatistiksel olarak anlamlı bir fark YOKTUR (p >= 0.05).

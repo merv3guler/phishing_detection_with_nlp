@@ -1,0 +1,1508 @@
+Delivered-To: mervecap35@gmail.com
+Received: by 2002:a05:6124:eab:b0:3f3:39ee:2e8f with SMTP id ba43csp669210vlb;
+        Thu, 29 May 2025 12:18:43 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEjSqa/gfhx1O32O+aDe34yrN08wm7UFpKATxtfkjRrcx4nEB/Ne1BsPBeqDJAtTw1wjWDP
+X-Received: by 2002:a05:6902:2482:b0:e7d:af92:9ba2 with SMTP id 3f1490d57ef6-e7f6f182e83mr6544762276.2.1748546323115;
+        Thu, 29 May 2025 12:18:43 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1748546323; cv=none;
+        d=google.com; s=arc-20240605;
+        b=B7eNiNcMJSDbf0qRSGyeGcZpyQ5W6E659WH5xJtAM63UMMtOl+e+4oM1o6BKFbR30w
+         rIj0MhwOJgFsBOs4JggsWSPzHObtGOudevVYtGCrIdgFruhanqeo1XUW9TdC8e6wGvaH
+         rHPtA8OYr7yZwKwyGyPd1+JIQNc7EAVKohr4WohrwMqLkgIFauLhwrUGlS1VOzoTIzQD
+         G7ZtqjgRwpnAa8i049M42igFu+PfKHxpzTLAqMXaj3CKSJRLfuJpqbxtZCoggDf/mREJ
+         IXFR8kDOoJb6Pap6T83G+gzlzfvoXd5QRmQmwjMjBJgfT0tIN7g6vDIHcHtDKyVic7qz
+         4s7w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=subject:mime-version:date:to:from:list-unsubscribe-post:message-id
+         :list-unsubscribe:dkim-signature;
+        bh=NHWx39mPyTCqG8TF9wF06YF/33NodZviBQ03AKF32aM=;
+        fh=VwHB3p8Kfa30jHQTivdlSBVZhOBt5Y0uD3hb/+1ZwRY=;
+        b=LaYTZmhS9NaZ+twfCMy1WYZ7iKXE7u5ytERYkhmHn68VORbHX3XMv16sVwVecm1k8Q
+         pWINpQlQEOD6yvyXNX9/HQeYqZFzuzlTrDAyioy3QM2fyCtCUF/yJKInpipQ2w0R+cAv
+         XwOMNRkkOW2/rbvhhRIEtm44naSO9R8qP7HhE48FwGK5iIUMs0wAMwytbDtdzw4QgtJ2
+         MW6S3HWiD8jVXBxZpzT+cWkGGVZf3VbhJaHq8rY5U0upgF2v3SAngZz6SrCN+Re/dIc2
+         PsZE18+3GdNUQOfulX6787/ibLY+UbtnSbV6UqOqrvV2dtuwrCh4HUU+FfwcgD0JZJPk
+         m7rw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@m.learn.coursera.org header.s=scph0823 header.b=tqm6gUX7;
+       spf=pass (google.com: domain of msprvs1=20244cu1zbqay=bounces-266693-993@m.learn.coursera.org designates 137.22.228.253 as permitted sender) smtp.mailfrom="msprvs1=20244cu1zbqaY=bounces-266693-993@m.learn.coursera.org";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=coursera.org
+Return-Path: <msprvs1=20244cu1zbqaY=bounces-266693-993@m.learn.coursera.org>
+Received: from x69sbhgp.m.learn.coursera.org (x69sbhgp.m.learn.coursera.org. [137.22.228.253])
+        by mx.google.com with ESMTPS id 3f1490d57ef6-e7f73556535si1738264276.413.2025.05.29.12.18.42
+        for <mervecap35@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 29 May 2025 12:18:43 -0700 (PDT)
+Received-SPF: pass (google.com: domain of msprvs1=20244cu1zbqay=bounces-266693-993@m.learn.coursera.org designates 137.22.228.253 as permitted sender) client-ip=137.22.228.253;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@m.learn.coursera.org header.s=scph0823 header.b=tqm6gUX7;
+       spf=pass (google.com: domain of msprvs1=20244cu1zbqay=bounces-266693-993@m.learn.coursera.org designates 137.22.228.253 as permitted sender) smtp.mailfrom="msprvs1=20244cu1zbqaY=bounces-266693-993@m.learn.coursera.org";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=coursera.org
+Return-Path: <msprvs1=20244cu1zbqaY=bounces-266693-993@m.learn.coursera.org>
+X-MSFBL: TNcll50pFslaNJiuZeHapA8LIbLJgToSfDAgGgLuMps=|eyJtZXNzYWdlX2lkIjo
+	iNjgyZjEwYjMzODY4ODM3MDVhMTgiLCJzdWJhY2NvdW50X2lkIjoiOTkzIiwidGV
+	uYW50X2lkIjoic3BjIiwiciI6Im1lcnZlY2FwMzVAZ21haWwuY29tIiwiY3VzdG9
+	tZXJfaWQiOiIyNjY2OTMifQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=m.learn.coursera.org; s=scph0823; t=1748546320;
+	i=@m.learn.coursera.org;
+	bh=NHWx39mPyTCqG8TF9wF06YF/33NodZviBQ03AKF32aM=;
+	h=List-Unsubscribe:Message-ID:List-Unsubscribe-Post:From:To:Date:
+	 Content-Type:Subject:From:To:Cc:Subject;
+	b=tqm6gUX7zi9E1PP34tN/cwNuCo8I8gnlyi+G0OF9eI5J4hpcc2dZQWBFRphCVMZ5n
+	 +xPbuEby/XNsGUwm3sDJHENXzB2Ts0ymDmvQ4FfH6JOJhjdXmG/xjNi9YOtAXwkOUJ
+	 u80MKpjzxTw9gezwbFEMv+JfFiWpI5kuXeYSf5ZQ=
+Received: from [10.90.29.24] ([10.90.29.24])
+	by i-0c66f77c27b228b86.mta1vrest.sd.prd.sparkpost (ecelerity 5.0.0.74392 r(msys-ecelerity:tags/5.0.0.3)) with REST
+	id 81/A5-60555-013B8386; Thu, 29 May 2025 19:18:40 +0000
+List-Unsubscribe: <https://05.emailinboundprocessing.com/enc_user/list_unsubscribe?d=%241%24uTBa6FB0iJXZ8Hvzk4Rbqw%3D%3D%24GZurPBLkVzT0J3liNgVmejJcfRrGuWr84MfZ4gE11nvmY%2FZXWwfiniAxCiso%0A9Mpq69TSMZXdqSe2EsJwFsQ3a36BrwoLYMVXz6B%2F3IzkuH9gzH7x9jaIbPIJ%0A4aP9HHtI3SZTYaXfrYl8w1wPN9N%2BmuCSX2bBHVNqV0Iv1yYTwNj7r%2BwUAHsU%0ACFXMYPtwaAABj2umvjpCNp2nKGvGi2cFPV8OadAVhJ1GAQZ4DckUZ2D6frKy%0AKWJ3t7KPEGzxYPYuObjGBKU2wp7GzL0RLLSzIxOXCatfhvPkRTpobA7cgIFp%0A0221UCYIYrK3qQPpoFMavlAyTJkmw33Ia%2B%2Bb4M%2F8Yls3dcgI%2FFE9dpF4zOuA%0AgphG4CQ%2F0EUV2Fm8arHfAyma&1=1>,<mailto:4_pjejpypduvtyvlm1ldv2v1mmxt5tsyco87k7rqk8rv49y5a8h831tw@unsubscribe-05.emailinboundprocessing.com?subject=Unsubscribe%20pnrcgsqcs17ab846tg49e8ki1ggg5ogtgxvrsdnwovcfd&body=DO_NOT_DELETE-b7ng1p2rdii64ys3pimdal4z69i5andt3nv15lwk3xtbh1nfn5tcg3qu36withauxohxklaozot6tvbub88dp-DO_NOT_DELETE>
+Message-ID: <81.A5.60555.013B8386@i-0c66f77c27b228b86.mta1vrest.sd.prd.sparkpost>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+From: "Coursera" <Coursera@m.learn.coursera.org>
+To: mervecap35@gmail.com
+Date: Thu, 29 May 2025 19:18:40 +0000
+Content-Type: multipart/alternative; boundary="_----GU8HipEY/2BSIa0FThBpBg===_8E/95-60555-F03B8386"
+MIME-Version: 1.0
+Subject: Special series: 4 ways to apply AI skills that employers value
+
+--_----GU8HipEY/2BSIa0FThBpBg===_8E/95-60555-F03B8386
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="UTF-8"
+
+Short on time=3F We have a solve for that in Week 2 of your AI=0ASkills Acc=
+elerator series      body, table, td, th, h1, h2, h3,=0Adiv, span, strong, =
+b, i, p, ul, ol, li, a { font-family:=0AHelvetica, sans-serif !important;} =
+sup { font-size: 100%=0A!important; } .nudge-component-icon-column { paddin=
+g-left: 12px=0A!important; padding-right: 32px !important; }=0A.nudge-compo=
+nent-text-column { padding-bottom: 32px !important;=0Apadding-right: 12px !=
+important; } .mobile-only { display: none=0A!important; }     96        =0A=
+  =CD=8F=E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =
+=CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=
+=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C=C2=AD =CD=8F =
+=E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=
+=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=
+=8C =C2=AD =CD=8F =E2=80=8C=C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =
+=C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=
+=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD=
+=CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=
+=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F=
+ =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F=E2=80=8C =C2=AD =CD=8F =E2=
+=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=
+=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C=
+ =C2=AD =CD=8F =E2=80=8C=C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=
+=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD=
+ =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C=C2=AD =CD=
+=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F=
+ =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =
+=E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD=CD=8F =E2=80=8C =C2=AD =CD=8F =E2=
+=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=
+=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C=
+ =C2=AD =CD=8F=E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=
+=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD=
+ =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C=C2=AD =CD=
+=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F=
+ =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =
+=E2=80=8C =C2=AD =CD=8F =E2=80=8C=C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=
+=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=
+=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C=
+ =C2=AD=CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=
+=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD=
+ =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F=E2=80=8C =C2=AD =CD=
+=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F=
+ =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =
+=E2=80=8C =C2=AD =CD=8F =E2=80=8C=C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=
+=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=
+=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C=
+=C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=
+=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD=
+ =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD=CD=8F =E2=80=8C =C2=AD =CD=
+=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F=
+ =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =
+=E2=80=8C =C2=AD =CD=8F=E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=
+=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=
+=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C=
+=C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=
+=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD=
+ =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C=C2=AD =CD=8F =E2=80=8C =C2=AD =CD=
+=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F=
+ =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =E2=80=8C =C2=AD =CD=8F =
+=E2=80=8C =C2=AD=CD=8F =E2=80=8C =C2=AD   Coursera =0A( https://link.course=
+ra.org/f/a/k1SJqLloBTPCmIFoH9QSyw~~/AAQRxRA~/8_YtV5ZYzMY9M0FjDqHupCV7LhbqgW=
+dvkwdaEXX5KQZbV5RTZmnWXY2k1aGuKLIdp5vHXx03csqdOwnTI3tmfSnT7ORUTRrMRRiF9SxCq=
+cjzrqjU8vjcBqPlXmykNoZA )   Four ways to apply=0AAI skills =0A( https://lin=
+k.coursera.org/f/a/XcBQZw3W9sXXNlmX3oi4KA~~/AAQRxRA~/28h-uqzkH32Z9qLQLBBPAK=
+-aIy-nRJaT8oNbGhX3k49l6JAIEpP1LlQOtUlnuwnMm6Gu4vaPRb58YMDOgv--BxYou6jG3Fg8W=
+idtD4Z0SNNaRcOGYYYYy3WtsCI4hyR0-fQAOUsfeP3qRhfwVAhC1bNjzJWmcp5ZsX-8rmI8aLI~=
+ )=0A=0A=0A************************************************=0AWeek 2: 4 way=
+s to put AI to work for your career=0A*************************************=
+***********=0A=0AWelcome to week two of your special-access AI skills=0Aacc=
+elerator series! Now that we=E2=80=99ve covered AI foundations, let's=0Aexp=
+lore how to apply AI skills in ways that make employers take=0Anotice.=0A=
+=0ASIMPLIFY SPREADSHEETS: Transform how you work with data by using=0AAI to=
+ generate formulas, clean datasets, and create=0Avisualizations=E2=80=94ski=
+lls you need to be a business analyst, a=0Ahigh-demand role with a median s=
+alary of $96,640.1=0A=0A* For an overview of how to use GenAI for Google Sh=
+eets,=0Aenroll in Google Cloud=E2=80=99s Gemini in Google Sheets =0A( https=
+://link.coursera.org/f/a/w5_PDDYYWVL7tFlvXOMd2Q~~/AAQRxRA~/rVbVSn7LGIy5drUD=
+sueuTFVMLtSTiPvG-SA-14A33ypECa5ezUZ2GmveoVPj-GOJXfs_7Y_9chimARxFir9K2oYebGG=
+8KJx25Z79G1uEGImBYLcdQeMjrnKqXdM8645Ubdqgm0dm9zPsxJ8MwTvDXC5TBPHUze9hThCOHb=
+a_dGR-5H5bFDfJF6cLeu4n6hhdZwrh2ZmDmM2lC_ZHACuB2FZ77AEzvk8x3lBq0ul1kOovQkRJ1=
+_MN09k1WrsQxRnTTKEkxu5YiWVNjsZrzYmlUtd5559pNH5KVj7MeTquE-k~ )=0A course.=0A=
+MANAGE YOUR TIME: Tame your inbox by using AI to summarize and=0Adraft emai=
+ls or even automate common replies, tasks that every=0Aprofessional needs t=
+o master in a busy digital world.=0A=0A* To learn ChatGPT-powered email aut=
+omation, check out=0AVanderbilt University=E2=80=99s ChatGPT+Zapier: AI-Pow=
+ered Email Mastery=0ASpecialization =0A( https://link.coursera.org/f/a/-zS_=
+22WZCS0LBtfd77W_4A~~/AAQRxRA~/ZlZESmcPsMeZzKYujmsvEEarAJ6ukUUHuGOMQRsujfmdN=
+0-J2TeISBg9Rk3pUTCDJGYJVHethmZcl9WQAJLPIQqDXRe8vN92wXxmsGYVrZRTwzpeCIqmTQbF=
+R0fy5QB3EbiyqgfDCOX1jiLK5IY4AtoirRsIy-knaWG6VZoMkLXSPF8lJv3c5A4lR5U2lOnZIfc=
+IxSoTnvipfB9_l9Ykqhc6rq1YPv8uV42F4D9PZRVknGEld9sd43WTETuklQyRt2M_fDsh2m-d6E=
+5wsjX2_njc07KLHFhmwVU4EADfAXCs-jSss7FtS602azqc6ecm )=0A.=0AMAKE DATA-DRIVEN=
+ DECISIONS: Use AI to uncover insights in=0Acomplex data, creating visualiz=
+ations that tell compelling=0Astories=E2=80=94essential capabilities for da=
+ta analysts, one of the fast=0Agrowing jobs according to the World Economic=
+ Forum.2=0A=0A* Use AI to prepare, analyze, and visualize data in IBM=E2=80=
+=99s=0AGenerative AI for Data Analysts Specialization =0A( https://link.cou=
+rsera.org/f/a/v1_b7pSY1Dv6SycVCoBTOA~~/AAQRxRA~/xDLnTiNygHNiM96YgAuqSI7EkOh=
+fbPa0_aeB3md8w6gwXw2_gbmhxWl2_eoCqnQcbkopiNt-tTsOUMdJOJGWlwPdlm30FcdJvCHoY3=
+uHBDNIpgTTJwZ-aZY0PVWxZQuG0pE777KctQumhPF3Vq2aKKrckwxpl-bix01dxt0lP_O6WXE68=
+8-alGYqlzE6m91O )=0A.=0AMANAGE PROJECTS: Leverage AI to plan resources, pre=
+dict=0Abottlenecks, and keep projects on track=E2=80=94skills you need to b=
+e a=0Aproject manager, with employers needing to fill 2.3 million new=0Apro=
+ject management roles annually through 2030.3=0A=0A* Use AI to streamline p=
+roject planning and execution in=0AVanderbilt University=E2=80=99s ChatGPT =
+for Project Management -=0ALeveraging AI for Success Specialization =0A( ht=
+tps://link.coursera.org/f/a/fe9uezwzNK7u9EN40g5usw~~/AAQRxRA~/CDv8MN1BjV4wG=
+6QDWclRBHX3qtIHEK1BggXsNa40PQ5k8j-bNY_9a8LSywlJLrvdWI3GcZCPFsFUiGTANXj8eJf5=
+4LzO38JpYTB9EqY7_tqGegqk0yvP0ejjHjswcH--OrZ3ldmOxJJ6T4gsDCDBz4T3JiK88TvVC3P=
+rt2-GM054cPXwvrbLkyNMNiUqg83V )=0A.=0ABuild more practical AI skills  =0A( =
+https://link.coursera.org/f/a/CMejGFvpQBaJt4asEmB7Pg~~/AAQRxRA~/28h-uqzkH32=
+Z9qLQLBBPAK-aIy-nRJaT8oNbGhX3k49l6JAIEpP1LlQOtUlnuwnMm6Gu4vaPRb58YMDOgv--B_=
+t41_Y6Hom5VoZlUmJG4twMr-G3x7bGdh-uggoAJ0ocdWOh6BPpudHvmT50BpZso-mBm7sEXyiCd=
+hqmA6fxWbc~ )=0A    =0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0ABuild AI skills =
+in 5 minutes a day----------------------------------Tap into our free 30 da=
+ys of GenAI YouTube series. With each 5-minute video, you=E2=80=99ll build =
+confidence with free versions of generative AI tools like ChatGPT and Googl=
+e Gemini.<br><br>No coding required! Join thousands of others learning to u=
+se AI confidently.Get started (https://link.coursera.org/f/a/ahAzQuaQefmgef=
+E-Ay_I6A~~/AAQRxRA~/fd6GNz-k2bpDCcCV4m837IDeB0KWnLlDWPLtcNPVVLVYelYoS-CDANg=
+vog62VeCW0ckGIfinSQGtmKeviAQoEJ97Si_5Nh0XdN9_AqMV4GNrnvo_ohIexw4QZe0lzON_1r=
+9jB9p4v8bODSFLIDaBdJ8cfKwP-fjpHzyLZDOLuFI~ )  -->rocket-transparent (https:=
+//link.coursera.org/f/a/LiXKzarDlvVlMYjnKaOX3Q~~/AAQRxRA~/fd6GNz-k2bpDCcCV4=
+m837IDeB0KWnLlDWPLtcNPVVLVYelYoS-CDANgvog62VeCWPt3tvItq-QP3v8CCZJUXMzy_QWHI=
+pViIp_VyW15Op8QSIyboPer0ypmLU6dFBqKs7eZ5b4hrUNSERkkEZeySo9cm69Y4Af-50YA4Nci=
+-aI4~ )=0A=0ABuild AI skills in 5 minutes a day=0A-------------------------=
+---------=0A=0ATap into our free 30 days of GenAI YouTube series =0A( https=
+://link.coursera.org/f/a/mDoW3qVQseSs6boE3aoIUw~~/AAQRxRA~/fd6GNz-k2bpDCcCV=
+4m837IDeB0KWnLlDWPLtcNPVVLVYelYoS-CDANgvog62VeCWUagfq58Gu6Vhd-kBzY8p0TvEniT=
+lPyMkXo2O6YsBlBha6AhK11m_Vy88LFKhZqgfQmL0rTQV8CSMpcBLLUHt3-FIqK45TYYPlK-41A=
+TrbLY~ ).=0AWith each 5-minute video, you=E2=80=99ll build confidence with =
+free=0Aversions of generative AI tools like ChatGPT and Google Gemini.=0A=
+=0ANo coding required! Join thousands of others learning to use AI=0Aconfid=
+ently.=0A=0AGet started=E2=86=92 =0A( https://link.coursera.org/f/a/j1W5wgK=
+3gxw7jvxay-Fujg~~/AAQRxRA~/fd6GNz-k2bpDCcCV4m837IDeB0KWnLlDWPLtcNPVVLVYelYo=
+S-CDANgvog62VeCW-JwZPGia0SvRjtqcHqds4iCaco4zsThMcbnf6L46RcA59oXUnbm97wmCSq_=
+eZuIrhKFYRxu2fNM6oJkV4nMd38KBfeaFq-riMULkUWkcmcw~ )=0A=0AIcon =0A( https://=
+link.coursera.org/f/a/RWFPYH9QWAeRLySnYfuCSw~~/AAQRxRA~/xDLnTiNygHNiM96YgAu=
+qSEKKNgXpra8zc7lY6iS9j2eQr4nX9W6GwyUk3LLYA3VmlI-GcdnigBc0xTcvXbJIuA7cNzY6R1=
+iB0x-9MgVmPKfFO8CyjWZPooC58F46Fnm3PJtpCqUXEkiCgwlDqhlWpep1SHu89MwmRBiriIZDL=
+xdjXwQQri3XksLbWgMEfavF )=0A      3 prompting tips from Dr. Jules White =0A=
+( https://link.coursera.org/f/a/qSUXeb2-3y0bloxKa50TqQ~~/AAQRxRA~/nS1XYWf7e=
+x1G8CI6rlbtckJSlZgnMLQgRPSNfaUXOVynhVBelXPbryYVq347vVut2EvVfLI9tMoH9kYWnjQg=
+fjmRznecSzBgyJ9cmQatz5DERL4iT1_cpRkQ73g075cXDZemu4P0wulWyawglLoG-kEMXoZXkwX=
+aURFvxiwuEnIzyEXNuii2-raFATYHA3JYKr_HRiEUbCfTP3tByQh5nA~~ )=0A=0A=0A-------=
+-----------------------=0A3 prompting techniques to know=0A----------------=
+--------------=0A=0ALearn go-to prompting techniques from Dr. Jules White, =
+whose=0Apopular GenAI courses have already taught thousands of learners=0Ao=
+n Coursera. Dr. White is a Professor of Computer Science at=0AVanderbilt Un=
+iversity, has published 170+ papers, has been=0Acelebrated by the National =
+Science Foundation, and is a National=0AScience Foundation CAREER Award rec=
+ipient.=0A=0AGet pro tips for prompting =E2=86=92 =0A( https://link.courser=
+a.org/f/a/Hb74zfYmvI8_J1255NpUdw~~/AAQRxRA~/nS1XYWf7ex1G8CI6rlbtckJSlZgnMLQ=
+gRPSNfaUXOVynhVBelXPbryYVq347vVut2EvVfLI9tMoH9kYWnjQgfjmRznecSzBgyJ9cmQatz5=
+DERL4iT1_cpRkQ73g075cXc9t8uPm-3sXk8g5yTrhBJ8isaGCpOvrh2wJCLuoFTcwFQv_mWbX8F=
+L055I9Rl3VZEWA6MnxL2ZMLQZrutGKE8Q~~ )=0A=0A=0A1 Median salary and job openi=
+ng data are sourced from=0ALightcast=E2=84=A2 Job Postings Report. (4/1/202=
+4 - 4/1/2025)=0A=0A2 World Economic Forum. The Future of Jobs Report 2025 =
+=0A( https://link.coursera.org/f/a/hd-Go9sJft6M2txvmljEfg~~/AAQRxRA~/NZDA9o=
+qVcSUkJLGtZA5rNUfSUEnG4dsjlnctxkq6LVN1-XsoGeHcobn_MJMDWWZ5ExgKJ_l8IZgRXmVUy=
+0zMAQbmDS93Oha3KyLb-RcQz4LLciNsyozRdB6EbSqnxm_ahKCBeF6H46UZ51XoeOQ2fRU8wSO3=
+g5KDxZ9wvwupwifRdimuToG0C_6GRqsqR7m2 )=0A=0A=0A3 Project Management Institu=
+te. Global Project Management Job=0ATrends 2023 =0A( https://link.coursera.=
+org/f/a/kxzAdmxSwtMxc7xpdQyo_Q~~/AAQRxRA~/A9sStIGGNzhKy6dE7QW5jTdREpcofLbUA=
+vkviKEDp5gwrqXDHQFoXUFo1BpIrispjEN1yoRsaJm3lFCxMUUTQEIaKi-gf3I5vBFl0cUbsm7n=
+XfAoZhtCxbizrPWhycuYQGD5R7Y-LjIjBjdcldNIAMPFLueuwMuEK2mWc2-i72dzo_yEL85CKtY=
+ZagMFHCKv )=0A=0A=0AHelp =0A( https://link.coursera.org/f/a/p2UtV8VkBDdJmQC=
+jl3Fxhw~~/AAQRxRA~/pUspQILt-52ZZS1p8vY_as8UeRpdt9wvccfgxyULlYHbLWU1sNBE2hX5=
+xW6gOtW9LGMo6mNdmJc4p-Alv_OMO0Vv_OD_Vgu8ObbjLDT4-qEKrPZaHxiF0H4ZW4ZnE9baeOV=
+l3kkIPqYrOAXK0CUix2S1lAQd-LjvQsVJpLoolPE~ )=0A Unsubscribe (=0Ahttps://link=
+.coursera.org/f/a/U8v3tB6KoTTmA8E9d86cMw~~/AAQRxRA~/eNE5hwZszGXVTzkKGY2tfh=
+JDvcCoEuyrZ66SbMExH-aN-KPJolnH6_xcpKZK-HQ-pVvFUcYkF5SzS2JBeuECPZqkh2VmPqcu8=
+tYYbZ7_9WZqtEZq5_fm8y_Rpu0I4w83m3-HJiY_zeN_1S5Ij-pM1X8RlIVuKNAUAz_ATRPVQSdp=
+CJONjSxmYpZxBZS0i-FJm4o-ymYJaU8Mw_-5og0kxOF_SZgbv0Mlb28Mq-NZ2cj8nj5cGx4rWjI=
+aQmbZChdrwlvOe5gZw0DKdO9-9A7tMte7InSF6H9aBtvnd25TWWzXBq-sfFOuEJQyP5OHVMrA_v=
+uYYPHrDYGxjN_9cUXzrQ974-GWyGaNVY-y0oJL_F8b9tdDrmwPDdrpqiRCuM-WdrL5TJSUsWJpY=
+FtkCevf4uxD34us0w57nClVedlbgZo9jjrWWDCFFExEj4ne3AUBMuo-8AeH_sXpeEnpH_FlOLCy=
+ngdTtUQDzxegrVr16j63QuXwQ9Wbh70owTl-JEDdYn8pDCRoTbSGMVS1KYQZLUr1hq7TBoPolRJ=
+lFudIzCFza8Tca5EtWGnrT8vgR96qLBuowR-xlolbAMBEJzg8CCrZn5hW_IiV9lBbVBpRqdo5gw=
+W8YSrxlwsQs7YzDfiMokWoIFDPCMS08NrduNPLvoXazQmgRO43kbNbRTYUHNnLVTosVj-NaoV1b=
+kShc1xeOiCnUZe73rDa8TNxc56pevFjrCmtKb2H_ZkmSdnHACdtsNhdjN80QvvhfLlE-6ISEdpJ=
+1dlT04nTYISluqPEKqD5TW0uG-5ek912Zq456KrQ7zFMv0e59nFrL5K55TquujwEa0soKHTYmra=
+JxxonJd-gOQXmEAGhWS72gtkKCOknMaZeu9H8h42BgZny-lqNwao_8dTiR3b9-uJNUb-pN1wgnn=
+sN1g50MyDNoembL3uTlRoHZhnTfnmHH6Zp2hYWtGBnT-5mZURv5S5Ej6oOChDf4UrC8D4kpktmn=
+P27lCNgWX46fWMus2xd-t_PKtD2I4Sm7h4SelQmxrciIY8q2Hb_Usz07G1_30GJrTvF-u3cX5eu=
+iTA6gdvvd4gSSsnlTFuJMv9WqMILEkrywUWDKM2O0Ts0IEMS5y84GEZ07UabgvbhMclq78t0jps=
+lkE-yAbD9SEsPblcj8BM7vNkLjhnWkRNU6VUIb1ePWEFeujc~=3Flid=3Docmenw1ygyy5 ) Pr=
+ivacy=0ANotice ( https://link.coursera.org/f/a/kmaXDA109siVNhCUifXehw~~/AAQ=
+RxRA~/nCqyieIyzt4oq-_AXHv_AVjzHOdodwQiRJ8xxIv3292X7EpHx8sHQnCuQbaMDu5vdsaDH=
+0dnJUR1tYaMOUWerQca31OaKDh0M8bb9dAgd9RNIja4YBtYfrjA4jO28em24ufZ1S0217KHK5nJ=
+NAweBg~~ )     Google Play =0A( https://link.coursera.org/f/a/8CWXxiApgGlTi=
+NIj1eLR7A~~/AAQRxRA~/wN8trwB4Cnmbgsrio1dfR3cMiqR51cjhJ5Yv7PGwfrf7KKDHbSQHOe=
+PAa23g8tTkqZSVgov7YeMb1lYR0Dst67f6tgFwWsg8gRp9xLcv4_zKNaVr0FOdCFKWW1j16F4Rm=
+EiJvjSGuQiLPM7ZQKg3Bg~~ )  iOS App=0A( https://link.coursera.org/f/a/_7UcoZ=
+P8c1gKOz9DE93grg~~/AAQRxRA~/wN8trwB4Cnmbgsrio1dfR3cMiqR51cjhJ5Yv7PGwfrf7KKD=
+HbSQHOePAa23g8tTkvRRzL_oyoadxeeL4r_I5D7WGt8_4lzcMQEtUjU4m7raVhv6XtlPk4DXrnQ=
+GS9GSpyvuNwHqAmY6IaRVgy3EeXg~~ )=0AFacebook ( https://link.coursera.org/f/a=
+/noqNHkdTeQL83buuoaRKVg~~/AAQRxRA~/9fMNn_obS85jpB6vqA3oQV4HpgbHlaG0TmjxtFTl=
+d1q6emBx4hj2FRexrcu6LIl5lTOSo2TdGUGag8xZ45g6h_iCbpvT9z4GYRDen6yVpZY9meqzULt=
+w0Mrc_7vonIxcg5-bhjd_10eeAslg1soI5w~~ )=0AX ( https://link.coursera.org/f/a=
+/W21Yf1TkYoWNv5-Qqbr3nQ~~/AAQRxRA~/UVVQertpuEOTCdhXCTr1Yh69RLLU3XnoVXUEwTsX=
+pstV1slz4i1urah51qIzciNWYfYcSCdzHMnQ80TGmwVOx-kVm6fiWZADoo_h5l-u05Gv_Xklwr_=
+X7Xt9TXzU5Uwt ) Instagram =0A( https://link.coursera.org/f/a/dLbc1kI2SBbzJZ=
+0i0P7s6w~~/AAQRxRA~/H8AuC5KdNyNw-1eGEojwqXQfRBDEA_MwXd0JIZgJWQDeyhr83_EBle8=
+H2tG4mL94_rH87NeMMEkEvcDCuMYrWRBgNm4hJoyktXKRNZi3bxHtTa3J2LzPCVtPpW0RVzA9kS=
+t8WXWAZf_XTmI-Fa1E5Q~~ ) LinkedIn =0A( https://link.coursera.org/f/a/vWtAUX=
+l1fTnRpW8gcq73ew~~/AAQRxRA~/LMsVDaIIhbS92UoFadTuopoudFehNq3Q0xi8F0gcuMMO-7N=
+R9kubS1q2-Pfx1-Wnzf4tcMxTqHsO6Yi8JFxLI0H0szdNKcX7Hm4EqDjLXfeGA8kGlUbOWoWlnP=
+qBHbXdWrvL8CnhBg8ZeJbLEUm8BcNr4ZEgwRi0fXcR2sKGeZs~ )=0A       =C2=A9 2025 C=
+oursera Inc. All=0Arights reserved. Coursera and the Coursera logo are regi=
+stered=0Atrademarks of Coursera, Inc. All other trademarks are property of=
+=0Atheir respective owners. Log in to manage all your notification=0Aprefer=
+ences in Email Settings =0A( https://link.coursera.org/f/a/5fIt9O2TV4xAs7wW=
+FPv0Nw~~/AAQRxRA~/Ud5hsTWDu0T0om8tQBoJwyfWeg0KlcMvn6oT76M3yZFLZQTAmeIt2DDlS=
+jGQGAF_bIcl_W_qfvQl1uLlK18DVntqKrgvjiuMFzibDhZXpO0-g3a_N_qGn0fGMzRVohZLbwBO=
+0nog22i2xMGluLWtLkgBcceOhlG8FpwJpvKSpjI~ ).=0A=0ACoursera | 2440 W El Camin=
+o Real 5th floor, Mountain View, CA=0A94040 USA
+--_----GU8HipEY/2BSIa0FThBpBg===_8E/95-60555-F03B8386
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+
+<!DOCTYPE html>=0A<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=
+=3D"urn:schemas-microsoft-com:office:office" lang=3D"en">=0A<head>=0A<title=
+></title>=0A<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3Dutf-8">=0A<meta name=3D"viewport" content=3D"width=3Ddevice-width,initia=
+l-scale=3D1">=0A<!--[if mso]>=0A<xml><w:WordDocument xmlns:w=3D"urn:schemas=
+-microsoft-com:office:word"><w:DontUseAdvancedTypographyReadingMail/></w:Wo=
+rdDocument>=0A<o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInc=
+h><o:AllowPNG/></o:OfficeDocumentSettings></xml>=0A<![endif]--><!--[if !mso=
+]><!--><link href=3D"https://fonts.googleapis.com/css=3Ffamily=3DSource+San=
+s+Pro" rel=3D"stylesheet" type=3D"text/css">=0A<!--<![endif]--><style>=0A*{=
+box-sizing:border-box}body{margin:0;padding:0}a[x-apple-data-detectors]{col=
+or:inherit!important;text-decoration:inherit!important}#MessageViewBody a{c=
+olor:inherit;text-decoration:none}p{line-height:inherit}.desktop_hide,.desk=
+top_hide table{mso-hide:all;display:none;max-height:0;overflow:hidden}.imag=
+e_block img+div{display:none}sub,sup{font-size:75%;line-height:0}#converted=
+-body .list_block ol,#converted-body .list_block ul,.body [class~=3Dx_list_=
+block] ol,.body [class~=3Dx_list_block] ul,u+.body .list_block ol,u+.body .=
+list_block ul{padding-left:20px}.menu_block.desktop_hide .menu-links span{m=
+so-hide:all} @media (max-width:720px){.image_block div.fullWidth{max-width:=
+100%!important}.mobile_hide{display:none}.row-content{width:100%!important}=
+.stack .column{width:100%;display:block}.mobile_hide{min-height:0;max-heig=
+ht:0;max-width:0;overflow:hidden;font-size:0}.desktop_hide,.desktop_hide ta=
+ble{display:table!important;max-height:none!important}.reverse{display:tabl=
+e;width:100%}.reverse .column.first{display:table-footer-group!important}.r=
+everse .column.last{display:table-header-group!important}.row-6 td.column.f=
+irst .border{padding:0 24px}.row-6 td.column.last .border{padding:24px}.row=
+-12 td.column.first .border{padding:5px 52px}.row-12 td.column.last .border=
+{padding:5px 0}.row-3 .column-1 .block-1.image_block td.pad,.row-3 .column-=
+1 .block-2.heading_block td.pad,.row-8 .column-1 .block-1.image_block td.pa=
+d,.row-8 .column-1 .block-2.heading_block td.pad{padding:0 0 24px!important=
+}.row-3 .column-1 .block-2.heading_block h1{font-size:33px!important}.row-2=
+ .column-1 .block-2.image_block td.pad{padding:10px 0 16px!important}.row-3=
+ .column-1 .block-3.paragraph_block td.pad>div,.row-3 .column-1 .block-5.pa=
+ragraph_block td.pad>div,.row-3 .column-1 .block-7.paragraph_block td.pad>d=
+iv,.row-3 .column-1 .block-9.paragraph_block td.pad>div{font-size:16px!impo=
+rtant}.row-3 .column-1 .block-3.paragraph_block td.pad,.row-3 .column-1 .bl=
+ock-5.paragraph_block td.pad,.row-3 .column-1 .block-7.paragraph_block td.p=
+ad,.row-3 .column-1 .block-9.paragraph_block td.pad,.row-8 .column-1 .block=
+-3.paragraph_block td.pad{padding:0 0 16px!important}.row-3 .column-1 .bloc=
+k-10.list_block td.pad,.row-3 .column-1 .block-4.list_block td.pad,.row-3 .=
+column-1 .block-6.list_block td.pad,.row-3 .column-1 .block-8.list_block td=
+.pad{padding:0 0 16px 8px!important}.row-3 .column-1 .block-10.list_block =
+ul,.row-3 .column-1 .block-4.list_block ul,.row-3 .column-1 .block-6.list_b=
+lock ul,.row-3 .column-1 .block-8.list_block ul{font-size:16px!important;li=
+ne-height:auto!important}.row-3 .column-1 .block-11.button_block td.pad{pad=
+ding:8px 0 0!important}.row-3 .column-1 .block-11.button_block span{line-he=
+ight:25.2px!important}.row-11 .column-1 .block-1.divider_block td.pad,.row-=
+4 .column-1 .block-1.divider_block td.pad,.row-7 .column-1 .block-1.divider=
+_block td.pad,.row-9 .column-1 .block-1.divider_block td.pad{padding:24px 0=
+!important}.row-11 .column-1 .block-1.divider_block .alignment table,.row-4=
+ .column-1 .block-1.divider_block .alignment table,.row-7 .column-1 .block-=
+1.divider_block .alignment table,.row-9 .column-1 .block-1.divider_block .a=
+lignment table{display:inline-table}.row-6 .column-1 .block-1.heading_block=
+ td.pad{padding:0 0 12px!important}.row-6 .column-1 .block-1.heading_block =
+h3{font-size:22px!important}.row-6 .column-1 .block-2.paragraph_block td.pa=
+d,.row-6 .column-2 .block-1.image_block td.pad,.row-8 .column-1 .block-4.pa=
+ragraph_block td.pad{padding:0!important}.row-6 .column-2 .block-1.image_bl=
+ock .alignment div{margin:0 auto 0 0!important}.row-8 .column-1 .block-2.he=
+ading_block h2{font-size:28px!important}.row-8 .column-1 .block-4.paragraph=
+_block td.pad>div{font-size:14px!important}.row-8 .column-1 .block-3.paragr=
+aph_block td.pad>div{font-size:18px!important}.row-10 .column-1 .block-1.pa=
+ragraph_block td.pad{padding:4px 0 0!important}.row-12 .column-2 .block-1.i=
+mage_block td.pad{padding:0 0 0 8px!important}.row-10 .column-1,.row-11 .co=
+lumn-1,.row-3 .column-1,.row-4 .column-1,.row-7 .column-1,.row-8 .column-1,=
+.row-9 .column-1{padding:0 24px!important}.row-6 .column-1 .border{padding=
+:0 32px 32px!important}.row-6 .column-2 .border{padding:32px 32px 24px 24px=
+!important}.row-12 .column-1 .border,.row-13 .column-1{padding:5px 24px!imp=
+ortant}.row-12 .column-2 .border{padding:5px 0 5px 5px!important}}=0A</styl=
+e>=0A<!--[if mso ]><style>sup, sub { font-size: 100% !important; } sup { ms=
+o-text-raise:10% } sub { mso-text-raise:-10% }</style> <![endif]-->=0A</hea=
+d>=0A<body class=3D"body" style=3D"margin:0;padding:0;-webkit-text-size-adj=
+ust:none;text-size-adjust:none;background-color:#fff">=0D=0A<div style=3D"c=
+olor:transparent;visibility:hidden;opacity:0;font-size:0px;border:0;max-hei=
+ght:1px;width:1px;margin:0px;padding:0px;border-width:0px!important;display=
+:none!important;line-height:0px!important;"><img border=3D"0" width=3D"1" h=
+eight=3D"1" src=3D"https://link.coursera.org/q/8zfDVsYV5oNio1WabdhqmQ~~/AAQ=
+RxRA~/PZkkjSlg8ZsFN_Lz7wcswcfDXYwjDze6S8oT9L-wOSe52GOxwNFpHDfP6-bBI1Wds71A0=
+kflMjVrVBMJEM8_-A~~" alt=3D""/></div>=0D=0A=0A<div style=3D"display:none !i=
+mportant;visibility:hidden;mso-hide:all;font-size:1px;color:#ffffff;line-he=
+ight:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">Short on =
+time=3F We have a solve for that in Week 2 of your AI Skills Accelerator se=
+ries</div>=0A<div style=3D"display:none !important;visibility:hidden;mso-hi=
+de:all;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max-width=
+:0px;opacity:0;overflow:hidden;">=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=
+=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =
+=C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=
+=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=
+=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =
+=E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=
+=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =
+=C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=
+=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=
+=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =
+=E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=
+=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =
+=C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=
+=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=
+=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =
+=E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=
+=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =
+=C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=
+=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=
+=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =
+=E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=
+=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =
+=C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=
+=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF </div>=0A<table class=3D"nl-contai=
+ner" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;background=
+-color:#fff"><tbody><tr><td>=0A<table class=3D"row row-1" align=3D"center" =
+width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><=
+table class=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0;background-color:#fff;color:#000;width:700px;margin:0 au=
+to" width=3D"700"><tbody><tr><td class=3D"column column-1" width=3D"100%" s=
+tyle=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:le=
+ft;padding-bottom:5px;padding-top:5px;vertical-align:top"><table class=3D"h=
+tml_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:=
+0"><tr><td class=3D"pad"><div style=3D"font-family:Source Sans Pro,Arial,Sa=
+ns-serif;text-align:center" align=3D"center">=0A<style>=0A=0A      =0A /* S=
+TART Reset */=0A/* Remove spaces around the email design added by some emai=
+l clients. */=0A html {=0A     scroll-behavior: smooth;=0A     -webkit-font=
+-smoothing: antialiased;=0A     -moz-osx-font-smoothing: grayscale;=0A}=0A =
+html, body, #body {=0A     height: 100% !important;=0A     Margin: 0 auto !=
+important;=0A     margin: 0;=0A     padding: 0 !important;=0A     width: 10=
+0% !important;=0A}=0A body, #body {=0A     font-family: 'Helvetica', Arial,=
+ sans-serif;=0A     -webkit-text-size-adjust: 100%;=0A     -ms-text-size-ad=
+just: 100%;=0A}=0A body, #body, #backgroundTable {=0A     background: #ffff=
+ff;=0A}=0A #backgroundTable {=0A     line-height: 100% !important;=0A     M=
+argin: 0;=0A     padding: 0;=0A     width: 100% !important;=0A}=0A body, #b=
+ody, table, td, th, p, a, li, blockquote{=0A     -webkit-text-size-adjust: =
+100%;=0A     -ms-text-size-adjust: 100%;=0A}=0A/* Prevent WebKit and Window=
+s mobile changing default text sizes */=0A article, aside, figcaption, figu=
+re, footer, header, hgroup, main, nav, section {=0A     display: block;=0A}=
+=0A table {=0A     border: 0;=0A     border-collapse: collapse;=0A     bord=
+er-spacing: 0;=0A     mso-table-lspace: 0pt;=0A     mso-table-rspace: 0pt;=
+=0A}=0A table, td, th{=0A     mso-table-lspace: 0pt;=0A     mso-table-rspac=
+e: 0pt;=0A}=0A/* Remove spacing between tables in Outlook 2007 and up */=0A=
+ table tr, table td, table th {=0A     border-collapse: collapse;=0A}=0A th=
+ {=0A     font-weight: normal;=0A     text-align: left;=0A}=0A img {=0A    =
+ border: 0;=0A     height: auto;=0A     line-height: 100%;=0A     outline: =
+none;=0A     text-decoration: none;=0A     -ms-interpolation-mode: bicubic;=
+=0A    /* Allow smoother rendering of resized image in Internet Explorer */=
+=0A}=0A a {=0A    text-decoration: underline;=0A}=0A a, a:visited {=0A     =
+color: #0056D2;=0A}=0A a:hover {=0A     text-decoration: none !important;=
+=0A}=0A a img {=0A     border: none;=0A}=0A/* Client-specific styles */=0A =
+#outlook a {=0A     padding: 0;=0A}=0A #MessageViewBody, #MessageWebViewDiv=
+ {=0A     width: 100% !important;=0A}=0A/* Forces Samsung Android mail clie=
+nts to use the entire viewport. */=0A .ReadMsgBody{=0A     width: 100%;=0A}=
+=0A .ExternalClass{=0A     width: 100%;=0A}=0A/* Force Hotmail to display e=
+mails at full width */=0A .ExternalClass, .ExternalClass p, .ExternalClass =
+span, .ExternalClass font, .ExternalClass td, .ExternalClass th, .ExternalC=
+lass div {=0A     line-height: 100%;=0A}=0A/* Force Hotmail to display norm=
+al line spacing */=0A .ExternalClass .outlook-hide, [owa] .outlook-hide, [c=
+lass=3D"x_outlook-hide"] {=0A     display: none !important;=0A}=0A/* iOS BL=
+UE LINKS */=0A a[x-apple-data-detectors] {=0A     color: inherit !important=
+;=0A     font-family: inherit !important;=0A     font-size: inherit !import=
+ant;=0A     font-weight: inherit !important;=0A     line-height: inherit !i=
+mportant;=0A     text-decoration: none !important;=0A}=0A/* GMAIL BLUE LINK=
+S */=0A/* SAMSUNG MAIL BLUE LINKS */=0A #MessageViewBody a, =0A/* Samsung M=
+ail */=0A [x-apple-data-detectors], =0A/* iOS */=0A u ~ div a, u + #body a,=
+ .detected-link, .detected-link a {=0A     color: inherit;=0A     font-fami=
+ly: inherit;=0A     font-size: inherit;=0A     font-weight: inherit;=0A    =
+ line-height: inherit;=0A     text-decoration: none;=0A}=0A .im {=0A     co=
+lor: inherit !important;=0A}=0A/* Prevents Gmail from changing the text col=
+or in conversation threads. */=0A .a6S {=0A     display: none !important;=
+=0A     opacity: 0.01 !important;=0A}=0A/* Prevents Gmail from displaying a=
+n download button on large, non-linked images. */=0A .a5q, img.prevent-down=
+load + div {=0A     display:none !important;=0A}=0A/* If the above doesn't =
+work, add a .prevent-download class to any image in question. */=0A img.pre=
+vent-download {=0A     cursor: default !important;=0A}=0A a[href^=3D"tel"],=
+ a[href^=3D"sms"], .detected-link a[href^=3D"tel"], .detected-link a[href^=
+=3D"sms"] {=0A     color: inherit;=0A     cursor: default;=0A     pointer-e=
+vents: none;=0A     text-decoration: none;=0A}=0A/* Yahoo Mail hack to fix =
+centering of main content */=0A @media yahoo {=0A     .yahoo {=0A         t=
+able-layout: fixed !important;=0A    }=0A}=0A/* END Reset */=0Ah1, .h1, h2,=
+ .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {=0A    font-weight: 700;=0A    ma=
+rgin: 0;=0A}=0Ah1, .h1 {=0A    font-size: 43px;=0A    line-height: 54px; /*=
+ 125.581% */=0A    margin: 0 0 24px;=0A}=0Ah2, .h2 {=0A    font-size: 32px;=
+=0A    line-height: 42px; /* 131.25% */=0A    margin: 0 0 48px;=0A}=0Ah3, .=
+h3 {=0A    font-size: 22px;=0A    line-height: 30px; /* 136.364% */=0A    m=
+argin: 0 0 16px;=0A}=0Ah4, .h4 {=0A    font-size: 18px;=0A    line-height: =
+28px; /* 155.556% */=0A}=0Ap, ul, ol {=0A    Margin: 0 0 32px;=0A}=0Aol, ul=
+ {=0A    font-size: 18px;=0A    font-weight: 400;=0A    line-height: 28px;=
+=0A}=0A.button {=0A    letter-spacing: 0.07px=0A}=0A .card p {=0A     font-=
+size: 16px;=0A     font-weight: 400;=0A     letter-spacing: 0em;=0A     lin=
+e-height: 28px;=0A}=0A .card p, .degrees-hero p {=0A     Margin: 0;=0A}=0A.=
+card-p {=0A     font-size: 16px;=0A     font-weight: 400;=0A     letter-spa=
+cing: 0em;=0A     line-height: 28px;=0A     Margin: 0;=0A}=0A li {=0A     p=
+adding: 0 0 8px;=0A}=0A .institution p, .footer p {=0A     color: #5B6780;=
+=0A     font-size: 14px;=0A     font-weight: 400;=0A     letter-spacing: -0=
+.02em;=0A     line-height: 21px;=0A}=0A .footer a {=0A     color: #5B6780;=
+=0A}=0A .institution p {=0A     Margin: 0 0 8px;=0A}=0A .footer p {=0A     =
+Margin: 0 0 16px;=0A}=0A .footer .utility-links p {=0A     font-size: 16px;=
+=0A     font-weight: 600;=0A     letter-spacing: -0.03em;=0A     line-heigh=
+t: 19px;=0A     Margin: 0 0 16px;=0A}=0A .footer .utility-links a {=0A     =
+text-decoration: none;=0A}=0A .utility-links {=0A     padding: 0 0 32px;=0A=
+}=0A .btn-outline a, .btn-outline a strong {=0A     background: transparent=
+ !important;=0A     border: 2px solid #0056D2 !important;=0A     color: #00=
+56D2 !important;=0A}=0A .sr-only {=0A     border: 0!important;=0A     clip:=
+ rect(0,0,0,0)!important;=0A     height: 1px!important;=0A     max-height: =
+1px;=0A     margin: -1px!important;=0A     mso-hide: all;=0A     overflow: =
+hidden!important;=0A     padding: 0!important;=0A     position: absolute!im=
+portant;=0A     white-space: nowrap!important;=0A     width: 1px!important;=
+=0A}=0A strong, b {=0A     font-weight: 600;=0A}=0A em, i {=0A     font-sty=
+le: italic;=0A}=0A sup {=0A     font-size: 70%;=0A     line-height: 0;=0A  =
+   vertical-align: super;=0A}=0A .small, small {=0A     font-size: 13px;=0A=
+     line-height: 20px;=0A}=0A .text-lowercase {=0A     text-transform: low=
+ercase;=0A}=0A .text-uppercase {=0A     text-transform: uppercase;=0A}=0A .=
+text-capitalize {=0A     text-transform: capitalize;=0A}=0A .text-left {=0A=
+     text-align: left;=0A}=0A .text-center {=0A     text-align: center;=0A}=
+=0A .text-right {=0A     text-align: right;=0A}=0A .gmailfix {=0A     displ=
+ay: none;=0A     display: none !important;=0A}=0A .show {=0A     display: n=
+one;=0A     max-height: 0;=0A     mso-hide: all;=0A     overflow: hidden;=
+=0A     width: 0;=0A}=0A/* simple text */=0A .simple-text h1 {=0A     margi=
+n-bottom: 48px !important;=0A}=0A .simple-text h3 {=0A     margin-top: 48px=
+ !important;=0A}=0A .simple-text div.btn {=0A     margin: 0 !important;=0A}=
+=0A .sign-off p {=0A     margin-bottom: 0px !important;=0A}=0A .mobile-only=
+ {=0A     display: none;=0A}=0A .reduced-margin {=0A     font-size:48px;=0A=
+}=0A=0A/* Insert Template Specific Desktop CSS*/=0A=0A@media only screen an=
+d (max-width: 699px) {=0A  /*[[MobileCSSTop]]*/=0A  h1, .h1 {=0A    font-si=
+ze: 38px  !important;=0A    line-height: 46px  !important;=0A    Margin: 0 =
+0 16px  !important;=0A    letter-spacing: -0.38px !important;=0A   }=0A =0A=
+   h2, .h2 {=0A    font-size: 32px  !important;=0A    line-height: 40px  !i=
+mportant;=0A    letter-spacing: -0.16px !important;=0A   }=0A =0A   h3, .h3=
+ {=0A    font-size: 20px  !important;=0A    line-height: 120%  !important;=
+=0A   }=0A   p {=0A    font-size: 16px !important;=0A    font-weight: 400;=
+=0A    letter-spacing: 0;=0A    line-height: 24px !important;=0A   }=0A =0A=
+   .card p, ol, ul {=0A    font-size: 14px;=0A    font-weight: 400;=0A    l=
+etter-spacing: 0;=0A    line-height: 21px;=0A   }=0A   .institution p {=0A =
+   Margin: 0 0 4px;=0A   }=0A =0A   table.container,=0A   .w-100,=0A   .ful=
+l-width {=0A    width: 100% !important;=0A   }=0A   table.full-width {=0A  =
+  display: block !important;=0A    float: none !important;=0A    Margin: au=
+to !important;=0A   }=0A   table.full-width + table.full-width {=0A    Marg=
+in-top: 20px !important;=0A   }=0A   td.full-width,=0A   th.full-width {=0A=
+    display: inline-block !important;=0A   }=0A   img.full-width, .height-a=
+uto {=0A    height: auto !important;=0A   }=0A   .content {=0A    padding: =
+0 7.5% !important;=0A   }=0A   .logo {=0A    height: 16px !important;=0A   =
+ width: auto !important;=0A   }=0A   .footer a {=0A    white-space: normal =
+!important;=0A   }=0A   .p-reset, .p-0 {=0A    padding: 0 !important;=0A   =
+}=0A   .p-lg {=0A    padding-left: 24px !important;=0A    padding-right: 24=
+px !important;=0A   }=0A   .ptb-0, .p-y-0 {=0A    padding-bottom: 0 !import=
+ant;=0A    padding-top: 0 !important;=0A   }=0A   .plr-0, .p-x-0 {=0A    pa=
+dding-left: 0 !important;=0A    padding-right: 0 !important;=0A   }=0A   .p=
+t-lg {=0A    padding-top: 16px !important;=0A   }=0A   .bdrt { =0A    borde=
+r-top: 1px solid #0F1114;=0A   }=0A   .hide {=0A    display: none !importan=
+t;=0A    font-size: 0;=0A    line-height: 0;=0A    max-height: 0;=0A    mso=
+-hide: all;=0A    overflow: hidden;=0A    width: 0;=0A   }=0A   .show {=0A =
+   display: block !important;=0A    margin: 0;=0A    max-height: inherit !i=
+mportant;=0A    overflow: visible !important;=0A    padding: 0;=0A    width=
+: auto !important;=0A   }=0A   .text-center {=0A    text-align: center;=0A =
+  }=0A   .center {=0A    float: none !important;=0A    text-align: center;=
+=0A   }=0A =0A   .btn a {=0A    border-radius: 4px !important;=0A    font-s=
+ize: 14px !important;=0A    line-height: 38px !important;=0A    min-width: =
+76px !important;=0A    letter-spacing: 0.16px !important;=0A   }=0A   .btn-=
+app-store {=0A    padding: 0 0 32px !important;=0A   }=0A   .card .feat-ima=
+ge {=0A    width: 224px;=0A   }=0A =0A   /* horizontal card */=0A   .horizo=
+ntal-card h2 {=0A     font-size: 16px!important;=0A     line-height: 19px!i=
+mportant;=0A     letter-spacing: -0.09px!important;=0A   }=0A   .horizontal=
+-card .spacer {=0A    width: 12px!important;=0A   }=0A   .horizontal-card-c=
+ontent,=0A   .horizontal-card-img {=0A     display: inline-block !important=
+;=0A     width: 100% !important;=0A   }=0A   .horizontal-card-img {=0A     =
+padding-bottom: 16px!important;=0A     padding-right: 0px!important;=0A   }=
+=0A   .horizontal-card-img img {=0A    width: 64px !important;=0A   }=0A   =
+.horizontal-testimonial-img {=0A    width: 66px !important;=0A   }=0A   .h=
+orizontal-card .spacer {=0A    display: none;=0A   }=0A=0A    .feature-bann=
+er-image-img {=0A      display: block !important;=0A      width: 100% !impo=
+rtant;=0A    }=0A=0A    .feature-banner-image-content {=0A     display: blo=
+ck !important;=0A     padding: 32px 24px 16px 4px !important;=0A     clear:=
+ both;=0A   }=0A   .feature-banner-image-content-dnd=0A     display: block =
+!important;=0A     padding: 24px 24px 32px 20px !important;=0A     clear: b=
+oth;=0A   }=0A=0A  .feature-banner-image-below-content {=0A     display: bl=
+ock !important;=0A     padding: 32px 24px 16px 12px !important;=0A     clea=
+r: both;=0A   }=0A =0A   /* recs cards */=0A =0A   .recs-card {=0A     widt=
+h: 64px !important;=0A     padding:35px 31px 0% 16px !important;=0A   }=0A =
+=0A   .recs-card img {=0A     width: 64px !important;=0A     height: 64px !=
+important;=0A   }=0A =0A   /* simple text */=0A =0A   .simple-text h1 {=0A =
+    margin-bottom: 32px !important;=0A    font-size: 38px  !important;=0A  =
+  line-height: 46px  !important;=0A    letter-spacing: -0.38px !important;=
+=0A=0A   }=0A =0A   .simple-text h3 {=0A     margin-top: 32px !important;=
+=0A     font-size: 20px !important;=0A     line-height: 24px !important;=0A=
+   }=0A =0A   /* half_and_half */=0A =0A   .half_and_half_image, .half_and_=
+half_text, .half_and_half_image_mkt {=0A     display: block;=0A     clear: =
+both;=0A   }=0A =0A   .half_and_half_image {=0A     padding: 0 0 30px 0 !im=
+portant;=0A   }=0A=0A   .half_and_half_image_mkt {=0A     padding: 0 0 6px =
+0 !important;=0A   }=0A =0A   .mobile-only {=0A     display: table !importa=
+nt;=0A   }=0A =0A   .reduced-margin{=0A     font-size:38px !important;=0A  =
+ }=0A=0A  .mobile_stack_horizontal_card th {=0A    display: block;=0A    cl=
+ear: both;=0A   }=0A   =0A   .mobile_stack_horizontal_card img {=0A    widt=
+h: 120px !important;=0A    height: auto !important;=0A   }=0A=0A   .mobile_=
+stack_horizontal_card_medium img {=0A    width: 170px !important;=0A    hei=
+ght: auto !important;=0A   }=0A=0A   .webinar-bluebar td {=0A      display:=
+ block !important;=0A      padding-left: 0 !important;=0A      padding-righ=
+t: 0 !important;=0A      font-size: 14px !important;=0A    }=0A=0A    table=
+.webinar-bluebar, .webinar-bluebar td table {=0A      width: 100% !importa=
+nt;=0A    }=0A    =0A    .webinar-bluebar-divider {=0A      padding-bottom:=
+ 20px !important;=0A    }=0A=0A    .webinar-bluebar-divider td {=0A      bo=
+rder-left: none !important;=0A      border-bottom: 1px solid #1f1f1f !impor=
+tant;=0A    }=0A =0A   /*[[MobileCSS]]*/=0A/* Insert Template Specific Mobi=
+le CSS*/=0A}=0A=0A@media screen and (-webkit-min-device-pixel-ratio:0) {=0A=
+/* Insert styles here (CSS3) */=0A=0A}=0A :root {=0A  color-scheme: light d=
+ark;=0A  supported-color-schemes: light dark;=0A }=0A=0A /* Target Dark Mod=
+e */=0A @media (prefers-color-scheme: dark ) {=0A  .dark-img {=0A   display=
+: block !important;=0A   display: table-cell !important;=0A   float: none !=
+important;=0A   line-height: inherit !important;=0A   Margin-top: 0px !impo=
+rtant;=0A   max-height: inherit !important;=0A   max-width: inherit !import=
+ant;=0A   overflow: visible !important;=0A   visibility: inherit !important=
+;=0A  }=0A  .light-img {=0A   display: none;=0A   display: none !important;=
+=0A   mso-hide: all;=0A  }=0A  .darkmode,=0A  body,=0A  #backgroundTable,=
+=0A  #body,=0A  .body {=0A   background-color: #202123 !important;=0A  }=0A=
+=0A  .darkmode,=0A  #backgroundTable_feature_banner {=0A   background-color=
+: #202123 !important;=0A  }=0A=0A=0A  *, h1, h2, p, span, b, address {=0A  =
+ color: #ffffff !important;=0A    letter-spacing: -0.02em;=0A  }=0A  a, a:v=
+isited {=0A   color: #889AEB !important;=0A  }=0A  .utility-links a, .utili=
+ty-links a:visited, .utility-links a strong {=0A   color:  #ffffff !importa=
+nt;=0A    letter-spacing: -0.02em;=0A  }=0A  .btn a, .btn a strong {=0A   b=
+ackground: #889AEB !important;=0A   color: #202123 !important;=0A  }=0A  .b=
+tn-link a,=0A  .btn-link a strong {=0A   background: transparent !important=
+;=0A   color: #889AEB !important;=0A  }=0A  .btn-outline a,=0A  .btn-outlin=
+e a strong {=0A   background: transparent !important;=0A   border: 2px soli=
+d #889AEB !important;=0A   color: #889AEB !important;=0A  }=0A  a .logo {=
+=0A   color: #0056D2 !important;=0A  }=0A=0A   .black-text-summary{=0A     =
+ color:#000 !important;=0A    }=0A=0A    .v-space-summary{=0A        backgr=
+ound-color:#202123 !important;=0A    }=0A=0A.column-2 {=0Aborder-left-color=
+: #202123 !important;=0Aborder-right-color: #202123 !important; =0Abackgrou=
+nd-color: #202123 !important; =0A}=0A.column-1 {=0Abackground-color: #20212=
+3 !important; =0A}=0A.column-3 {=0Aborder-left-color: #202123 !important;=
+=0Aborder-right-color: #202123 !important; =0Abackground-color: #202123 !im=
+portant; =0A}=0A=0A }=0A /* Target Dark Mode Outlook app (Android) */=0A [d=
+ata-ogsc] .dark-img {=0A  display: block !important;=0A  display: table-cel=
+l !important;=0A  float: none !important;=0A  line-height: inherit !importa=
+nt;=0A  Margin-top: 0px !important;=0A  max-height: inherit !important;=0A =
+ max-width: inherit !important;=0A  overflow: visible !important;=0A  visib=
+ility: inherit !important;=0A }=0A [data-ogsc] .light-img {=0A  display: no=
+ne;=0A  display: none !important;=0A  mso-hide: all;=0A }=0A [data-ogsc] .d=
+arkmode,=0A [data-ogsc] body,=0A [data-ogsc] #backgroundTable,=0A [data-ogs=
+c] #body,=0A [data-ogsc] .body {=0A  background-color: #202123 !important;=
+=0A }=0A [data-ogsc] *, [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] p, [dat=
+a-ogsc] span, [data-ogsc] a, [data-ogsc] b {=0A  color: #ffffff !important;=
+=0A }=0A [data-ogsc] a, [data-ogsc] a:visited, [data-ogsc] a strong {=0A  c=
+olor: #889AEB !important;=0A }=0A [data-ogsc] .utility-links a, [data-ogsc]=
+ .utility-links a:visited, [data-ogsc] .utility-links a strong {=0A  color:=
+  #ffffff !important;=0A }=0A [data-ogsc] .btn a, [data-ogsc] .btn a strong=
+ {=0A  background: #889AEB !important;=0A  color: #202123 !important;=0A }=
+=0A [data-ogsc] .btn-link a,=0A [data-ogsc] .btn-link a strong {=0A  backgr=
+ound: transparent !important;=0A  color: #889AEB !important;=0A }=0A [data-=
+ogsc] .btn-outline a,=0A [data-ogsc] .btn-outline a strong {=0A  background=
+: transparent !important;=0A  border: 2px solid #889AEB !important;=0A  col=
+or: #889AEB !important;=0A }=0A [data-ogsc] a .logo {=0A  color: #0056D2 !i=
+mportant;=0A }=0A /* Removes right gutter in Gmail iOS app. */=0A /* iPhone=
+ 4, 4S, 5, 5S, 5C, and 5SE */=0A @media only screen and (min-device-width: =
+320px) and (max-device-width: 374px) {=0A  u ~ div .email-container {=0A   =
+min-width: 320px !important;=0A  }=0A }=0A /* iPhone 6, 6S, 7, 8, and X */=
+=0A @media only screen and (min-device-width: 375px) and (max-device-width:=
+ 413px) {=0A  u ~ div .email-container {=0A   min-width: 375px !important;=
+=0A  }=0A }=0A /* iPhone 6+, 7+, and 8+ */=0A @media only screen and (min-d=
+evice-width: 414px) {=0A  u ~ div .email-container {=0A   min-width: 414px =
+!important;=0A  }=0A }=0A</style>=0A=0A<!--[if mso]>=0A <style>=0A  body, t=
+able, td, th, h1, h2, h3, div, span, strong, b, i, p, ul, ol, li, a { font-=
+family: Helvetica, sans-serif !important;}=0A  sup { font-size: 100% !impor=
+tant; }=0A    .nudge-component-icon-column {=0A      padding-left: 12px !im=
+portant;=0A      padding-right: 32px !important;=0A    }=0A   .nudge-compon=
+ent-text-column {=0A      padding-bottom: 32px !important;=0A      padding-=
+right: 12px !important;=0A    }  =0A    .mobile-only {=0A      display: non=
+e !important;=0A    }=0A </style>=0A <xml>=0A  <o:OfficeDocumentSettings>=
+=0A   <o:AllowPNG/>=0A   <o:PixelsPerInch>96</o:PixelsPerInch>=0A  </o:Offi=
+ceDocumentSettings>=0A </xml>=0A<![endif]-->=0A=0A<!-- Begin Email Specific=
+ Styles -->=0A<style></style>=0A</div></td></tr></table></td></tr></tbody><=
+/table></td></tr></tbody></table>=0A<table class=3D"row row-2" align=3D"cen=
+ter" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;background=
+-color:#fff"><tbody><tr><td><table class=3D"row-content stack" align=3D"cen=
+ter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"=
+ style=3D"mso-table-lspace:0;mso-table-rspace:0;background-color:#fff;color=
+:#000;width:700px;margin:0 auto" width=3D"700"><tbody><tr><td class=3D"colu=
+mn column-1" width=3D"100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;=
+font-weight:400;text-align:left;vertical-align:top">=0A<table class=3D"html=
+_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0=
+"><tr><td class=3D"pad"><div style=3D"font-family:Source Sans Pro,Arial,San=
+s-serif;text-align:center" align=3D"center">=0A<div style=3D"display: none;=
+ max-height: 0px; overflow: hidden;"> =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=
+=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=
+=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp;=
+ =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C=
+ &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =
+=E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =
+=CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =
+=C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=
+=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nb=
+sp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=
+=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F=
+ =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD=
+ =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87=
+ =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =
+=E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C =
+&nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=
+=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=
+=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=
+=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=
+=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp;=
+ =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C=
+ &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =
+=E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =
+=CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =
+=C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=
+=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nb=
+sp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=
+=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F=
+ =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD=
+ =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87=
+ =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =
+=E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C =
+&nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=
+=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=
+=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=
+=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=
+=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp;=
+ =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C=
+ &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =
+=E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =
+=CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =
+=C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=
+=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nb=
+sp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=
+=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F=
+ =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD=
+ =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87=
+ =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =
+=E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C =
+&nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=
+=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=
+=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=
+=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=
+=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp;=
+ =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C=
+ &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =
+=E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =
+=CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =
+=C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=
+=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nb=
+sp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=
+=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F=
+ =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD=
+ =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87=
+ =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =
+=E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C =
+&nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=
+=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=
+=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=
+=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=
+=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp;=
+ =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C=
+ &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =
+=E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =
+=CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =
+=C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=
+=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nb=
+sp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=
+=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F=
+ =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD=
+ =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87=
+ =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =
+=E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C =
+&nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=
+=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=
+=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=
+=AD =CD=8F =E2=80=8C &nbsp; =E2=80=87 =C2=AD =CD=8F =E2=80=8C &nbsp; =E2=80=
+=87 =C2=AD </div></div></td></tr></table>=0A<table class=3D"image_block blo=
+ck-2" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td c=
+lass=3D"pad" style=3D"padding-bottom:32px;padding-top:10px;width:100%;paddi=
+ng-right:0;padding-left:0"><div class=3D"alignment" align=3D"center"><div s=
+tyle=3D"max-width:140px"><a href=3D"https://link.coursera.org/f/a/Cte0FCniP=
+WQNk1vCFrCbiA~~/AAQRxRA~/MbHSmcUHCCmw4E5Zo1bnnaj0JKU29fmWqb8js66rL1wMOIoiqb=
+E6Vibruzx4AHr6EWQOgrNJjlQqumuGl_4LO-W94S5sGA1B6Y3IOryvnZWtxtY0AXWSOH60BZa8h=
+2xLrvyrObHs_TIL4jIsP-2y6rfadZnDAaHYMEwwnS4qKF961PNwy9rlUQAoymSjKzEgU65_2src=
+gkmTopeikUyG66aIF6myu3VV6FlryJkKM3iEKS6C9nh8r2CrwR7MTkFdAEU5MSB_ND1CWJmditW=
+a730RRxpFJj4YL0FbbWPMKoM~" target=3D"_blank" style=3D"outline:none" tabinde=
+x=3D"-1"><img src=3D"https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1=
+/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/04_19_2022=
+_19_16_21_logo-coursera.png" style=3D"display:block;height:auto;border:0;wi=
+dth:100%" width=3D"140" alt=3D"Coursera" title=3D"Coursera" height=3D"auto"=
+></a></div></div></td></tr></table>=0A</td></tr></tbody></table></td></tr><=
+/tbody></table>=0A<table class=3D"row row-3" align=3D"center" width=3D"100%=
+" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" st=
+yle=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table class=
+=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-r=
+space:0;background-color:#fff;border-radius:0;color:#000;width:700px;margin=
+:0 auto" width=3D"700"><tbody><tr><td class=3D"column column-1" width=3D"10=
+0%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-ali=
+gn:left;padding-left:52px;padding-right:52px;vertical-align:top">=0A<table =
+class=3D"image_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-ta=
+ble-rspace:0"><tr><td class=3D"pad" style=3D"padding-bottom:36px;width:100%=
+;padding-right:0;padding-left:0"><div class=3D"alignment" align=3D"center">=
+<div class=3D"fullWidth" style=3D"max-width:596px"><a href=3D"https://link.=
+coursera.org/f/a/jeQn0Q0l8baXavDRo-KahA~~/AAQRxRA~/vegK0j-eBMA0bKDx0dxBxKrx=
+qO58dBWJCGv1hpfUC6rh2MHyhRspnPg8SqIsB_fB1KrscTV4e2OgGb7aS0T8t5WZ_2xBFwqLFpH=
+3_ig5XEK3pDEo9sivQI503RHajEAYtiwEdp5mucewrJmDJ-RsWE5QKOcVb3TgsHKwjNKiS0aSdJ=
+woiTljRCuwidZg0rwdXoQReb6Heo67yoah8cpv1yPGNrejbUSwnVFsprn4CG82f7X0cWZOla85n=
+4YlpnQEHCFLYdQcM2mFhlmrNZDmxs2kstzMK8mLb2EEy8m8lo8JabQlv6Jle62bbQjcCKQw" ta=
+rget=3D"_blank" style=3D"outline:none" tabindex=3D"-1"><img src=3D"https://=
+d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-=
+misc.s3.amazonaws.com/mailspin/prod/05_19_2025_20_14_35_BC-4602_AI_Skills_C=
+ampaign_Email_Header2.png=3Fborder=3D1,ffffff&amp;border-radius=3D8,8,8,8&a=
+mp;border-radius-inner=3D8,8,8,8" style=3D"display:block;height:auto;border=
+:0;width:100%" width=3D"596" alt=3D"Four ways to apply AI skills" title=3D"=
+Four ways to apply AI skills" height=3D"auto"></a></div></div></td></tr></t=
+able>=0A<table class=3D"heading_block block-2" width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-tabl=
+e-lspace:0;mso-table-rspace:0"><tr><td class=3D"pad" style=3D"padding-botto=
+m:32px;text-align:center;width:100%"><h1 style=3D"margin:0;color:#0f1114;di=
+rection:ltr;font-family:Helvetica,Arial,Sans-serif;font-size:43px;font-weig=
+ht:700;letter-spacing:normal;line-height:1.2;text-align:left;margin-top:0;m=
+argin-bottom:0;mso-line-height-alt:52px">Week 2: 4 ways to put AI to work f=
+or your career</h1></td></tr></table>=0A<table class=3D"paragraph_block blo=
+ck-3" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break=
+:break-word"><tr><td class=3D"pad" style=3D"padding-bottom:16px">=0A<div st=
+yle=3D"color:#0f1114;direction:ltr;font-family:Helvetica,Arial,Sans-serif;f=
+ont-size:18px;font-weight:400;letter-spacing:0;line-height:1.5;text-align:l=
+eft;mso-line-height-alt:27px">=0A<p style=3D"margin:0;margin-bottom:18px">=
+=0AWelcome to week two of your special-access AI skills accelerator series!=
+ Now that we=E2=80=99ve covered AI foundations, let's explore how to apply =
+AI skills in ways that make employers take notice.</p>=0A<p dir=3D"ltr" ali=
+gn=3D"left" style=3D"margin:0"><strong>SIMPLIFY SPREADSHEETS</strong>: Tran=
+sform how you work with data by using AI to generate formulas, clean datase=
+ts, and create visualizations=E2=80=94skills you need to be a business anal=
+yst, a high-demand role with a median salary of $96,640.<sup>1</sup></p>=0A=
+</div>=0A</td></tr></table>=0A<table class=3D"list_block block-4" width=3D"=
+100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation=
+" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word;colo=
+r:#0f1114;direction:ltr;font-family:Helvetica,Arial,Sans-serif;font-size:18=
+px;font-weight:400;letter-spacing:0;line-height:1.5;text-align:left;mso-lin=
+e-height-alt:27px"><tr><td class=3D"pad" style=3D"padding-bottom:16px;paddi=
+ng-left:8px"><div style=3D"margin-left:-20px"><ul start=3D"1" style=3D"marg=
+in-top:0;margin-bottom:0;list-style-type:disc"><li style=3D"Margin:0">For a=
+n overview of how to use GenAI for Google Sheets, enroll in Google Cloud=E2=
+=80=99s <a href=3D"https://link.coursera.org/f/a/1r_o2loD_WN1e4E6ETWWEw~~/A=
+AQRxRA~/DNTfEKZIMBAKFMxAlNzCy4lcKmmxe3qLCfiumd60cbOcBYozbTzq_4XTn5d6a9ccE-1=
+5YGLR9Zte3igxdlcCpfaBLeCvNuOrFDlk5McrTMQ7_gZTYbcyw7VnjTn0IMpYZrTEufg1IhcKEf=
+NpLMTVZqRKo78OKv72yaReHibSaaNqC8bJA2l3ljpyOz-PPlRaepplQZnrlKj-FD9OmT6-B18KB=
+njxltRJsTQG-kyurws71R5qtayKeGTa-1P5twTJ0AitDkUiZXli97nfn-aI4EdXQLLH5XBh-KZb=
+nJLJU5VzNBSRLBKjDmUh_9fNeWUy385u2k3hU5IsvzWTMqd1MWKSXbtLa3SVXNXoNQOWsUZbo_j=
+X1y_4ZCMRn1_vUR5i3O1KSfeXftG1LJzEF5yGBAyfdkzkTB482cXWLWlC3wQUv2XGvls_p9uAIN=
+N8-5Vp" target=3D"_self" data-mce-attributes-count=3D"1" style=3D"text-deco=
+ration: underline; color: #0f1114;">Gemini in Google Sheets</a> course.</li=
+></ul></div></td></tr></table>=0A<table class=3D"paragraph_block block-5" w=
+idth=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pres=
+entation" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-w=
+ord"><tr><td class=3D"pad" style=3D"padding-bottom:16px"><div style=3D"colo=
+r:#0f1114;direction:ltr;font-family:Helvetica,Arial,Sans-serif;font-size:18=
+px;font-weight:400;letter-spacing:0;line-height:1.5;text-align:left;mso-lin=
+e-height-alt:27px"><p style=3D"margin:0">=0A<strong>MANAGE YOUR TIME</stron=
+g>: Tame your inbox by using AI to summarize and draft emails or even autom=
+ate common replies, tasks that every professional needs to master in a busy=
+ digital world.</p></div></td></tr></table>=0A<table class=3D"list_block bl=
+ock-6" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break=
+:break-word;color:#0f1114;direction:ltr;font-family:Helvetica,Arial,Sans-se=
+rif;font-size:18px;font-weight:400;letter-spacing:0;line-height:1.5;text-al=
+ign:left;mso-line-height-alt:27px"><tr><td class=3D"pad" style=3D"padding-b=
+ottom:16px;padding-left:8px"><div style=3D"margin-left:-20px"><ul start=3D"=
+1" style=3D"margin-top:0;margin-bottom:0;list-style-type:disc"><li style=3D=
+"Margin:0">=0ATo learn ChatGPT-powered email automation, check out Vanderbi=
+lt University=E2=80=99s <a href=3D"https://link.coursera.org/f/a/AJ76vCpvHM=
+GnEWIrasdUnQ~~/AAQRxRA~/Exuk6n2Nbmzu9aK7ueH2IbTVhuFr6eXn3pVDIKeBgrJo0_x81aw=
+FzzDB7LUFoqqyQAhMgRGuOB7R_1ZyM9_vWPZ8LU316gPUmMMb1pgzb8tFkDmpZUCDDxqcnOlIZg=
+3JuPZcp1BGEL_NFn1dcAaG3c9qN8qeok6kxzNByoeGFREvG4gmnsS6PU6TDVT7B98cEuyN8aUzC=
+L5M8k4GR18z7-s4exZaFqUIU84NBwnR-PSXdcS9YiA08K5v5imr2fgOtA-sNw7njPuXqd87JCQz=
+uqjF8DFlxrOIWGanq0UrWibf9GJbgnBS639bg4unZZLYuk9NLAUb4Js-6MQIFqWzwDKRE3jCX7p=
+YvU-ZliK-CGVRFuq7iiY-aG23TemuC5r03fYju9-O2to4TpNJJc-IkxGOgfsatDXiHBYs6Jtv7V=
+QLiW93nWXeGpU7rpNikPCDrkzzxaN6MsPCG2KMZm041A~~" target=3D"_self" data-mce-a=
+ttributes-count=3D"1" style=3D"text-decoration: underline; color: #0f1114;"=
+>ChatGPT+Zapier: AI-Powered Email Mastery Specialization</a>.</li></ul></di=
+v></td></tr></table>=0A<table class=3D"paragraph_block block-7" width=3D"10=
+0%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" =
+style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tr><=
+td class=3D"pad" style=3D"padding-bottom:16px"><div style=3D"color:#0f1114;=
+direction:ltr;font-family:Helvetica,Arial,Sans-serif;font-size:18px;font-we=
+ight:400;letter-spacing:0;line-height:1.5;text-align:left;mso-line-height-a=
+lt:27px"><p style=3D"margin:0">=0A<strong>MAKE DATA-DRIVEN DECISIONS</stron=
+g>: Use AI to uncover insights in complex data, creating visualizations tha=
+t tell compelling stories=E2=80=94essential capabilities for data analysts,=
+ one of the fast growing jobs according to the World Economic Forum.<sup>2<=
+/sup></p></div></td></tr></table>=0A<table class=3D"list_block block-8" wid=
+th=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-wor=
+d;color:#0f1114;direction:ltr;font-family:Helvetica,Arial,Sans-serif;font-s=
+ize:18px;font-weight:400;letter-spacing:0;line-height:1.5;text-align:left;m=
+so-line-height-alt:27px"><tr><td class=3D"pad" style=3D"padding-bottom:16px=
+;padding-left:8px"><div style=3D"margin-left:-20px"><ul start=3D"1" style=
+=3D"margin-top:0;margin-bottom:0;list-style-type:disc"><li style=3D"Margin:=
+0">=0AUse AI to prepare, analyze, and visualize data in IBM=E2=80=99s <a hr=
+ef=3D"https://link.coursera.org/f/a/A1wbxPtDNgBurWuGQb5LFg~~/AAQRxRA~/jSgbg=
+hdeJJkSxJOVJ94ZAJ0HHIWl7z_r8NiAP-1ZewMON6n7RE-m5y6KeqOUd0uC6GqE6DKiBiAivsnF=
+fIB9wOyizeFSAcEfsS4P_tRr3ayfcb_Yyu6HpkQ-lLneih4AfSI6KPmwvhGFqwtS0xBj9PO99es=
+TqddiVys_kDm3Ayp5YunYyvUSIpShuUkPf0IkArFXC0I-ZbNbhWrRzJGV5STJEvSp_RMFonqxSY=
+IblxouHq2KIqh2XXWAE46ect23WcXcgQB_m6qgAEWyyM7hJI2kekLgPd_uaSKlyqk6_vdqIWL8q=
+D2M6MeE0KItQhmOETbz5WWOI17ZOQ09_MWPi58lNozIEARQzItXlWlwhkI~" style=3D"text-=
+decoration: underline; color: #0f1114;">Generative AI for Data Analysts Spe=
+cialization</a>.</li></ul></div></td></tr></table>=0A<table class=3D"paragr=
+aph_block block-9" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:=
+0;word-break:break-word"><tr><td class=3D"pad" style=3D"padding-bottom:16px=
+"><div style=3D"color:#0f1114;direction:ltr;font-family:Helvetica,Arial,San=
+s-serif;font-size:18px;font-weight:400;letter-spacing:0;line-height:1.5;tex=
+t-align:left;mso-line-height-alt:27px"><p style=3D"margin:0"><strong>MANAGE=
+ PROJECTS</strong>: Leverage AI to plan resources, predict bottlenecks, and=
+ keep projects on track=E2=80=94skills you need to be a project manager, wi=
+th employers needing to fill 2.3 million new project management roles annua=
+lly through 2030.<sup>3</sup></p></div></td></tr></table>=0A<table class=3D=
+"list_block block-10" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspa=
+ce:0;word-break:break-word;color:#0f1114;direction:ltr;font-family:Helvetic=
+a,Arial,Sans-serif;font-size:18px;font-weight:400;letter-spacing:0;line-hei=
+ght:1.5;text-align:left;mso-line-height-alt:27px"><tr><td class=3D"pad" sty=
+le=3D"padding-bottom:24px;padding-left:8px"><div style=3D"margin-left:-20px=
+"><ul start=3D"1" style=3D"margin-top:0;margin-bottom:0;list-style-type:dis=
+c"><li style=3D"Margin:0">Use AI to streamline project planning and executi=
+on in Vanderbilt University=E2=80=99s <a href=3D"https://link.coursera.org/=
+f/a/SYZahi3GW5VRVHHuDSW-kw~~/AAQRxRA~/gFxix5KW_mIad6Frc3Gz5tQDdk6LYzACQlshU=
+4K7TSPL8K8UJ9Sgmq7GNOIo6T-GRU9uL7Y0HZ2svZi923aprKduMFOJ6h4XsRCalMyWJ3J4S0QA=
+TopRPevnNvj-Xh2KZ3nhy65oRgr4_9O6rV3O3mfZnO9YpeR-gFvM6iqR3VNNvPmb8pRhvjFPPk0=
+mUae7o0FL5-1zXbLyF4SlHPvmwkt-mBjgLjnmwubA75MAzo0VJyEEMLqdFQfCOt8S4U0w3LepIu=
+XZWDgwtzHpQVIbITFzwwhu96aBIwktYc9BrWDLfQk2Wc6BvgwWy9Ac1NUay8RcL2SaXrG23OjnM=
+HmyhQ~~" target=3D"_self" data-mce-attributes-count=3D"1" style=3D"text-dec=
+oration: underline; color: #0f1114;">ChatGPT for Project Management - Lever=
+aging AI for Success Specialization</a>.</li></ul></div></td></tr></table>=
+=0A<table class=3D"button_block block-11" width=3D"100%" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lsp=
+ace:0;mso-table-rspace:0"><tr><td class=3D"pad" style=3D"padding-top:16px;t=
+ext-align:left"><div class=3D"alignment" align=3D"left"><a href=3D"https://=
+link.coursera.org/f/a/aj_Rjd2fh9XFNO0L65tvZA~~/AAQRxRA~/vegK0j-eBMA0bKDx0dx=
+BxKrxqO58dBWJCGv1hpfUC6rh2MHyhRspnPg8SqIsB_fB1KrscTV4e2OgGb7aS0T8tx5fRPm817=
+quPjdrZ2n0QZDi8or77hWxIEDLl9_C3cXwdrLhQWQQdxdeOkKh5Hvn8K1DVxOm12MomLhlx-C4T=
+GQe5goHab9BBuTX1nuNT5fjqxTB2AIib36Giy79drPfLhFiV0rgi-WRXpYhc-F9hGoUv9yPckzx=
+F-UcZatVH90jXTlsOwZodYGRZb7QWMw_ZyZV3HOvC-aMrFla1eVnGMbJJ7QNhpPsa_s-P8Y0cfY=
+K" target=3D"_blank" style=3D"color:#FFFFFF;text-decoration:none;"><!--[if =
+mso]>=0A<v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"u=
+rn:schemas-microsoft-com:office:word"  href=3D"https://link.coursera.org/f/=
+a/aj_Rjd2fh9XFNO0L65tvZA~~/AAQRxRA~/vegK0j-eBMA0bKDx0dxBxKrxqO58dBWJCGv1hpf=
+UC6rh2MHyhRspnPg8SqIsB_fB1KrscTV4e2OgGb7aS0T8tx5fRPm817quPjdrZ2n0QZDi8or77h=
+WxIEDLl9_C3cXwdrLhQWQQdxdeOkKh5Hvn8K1DVxOm12MomLhlx-C4TGQe5goHab9BBuTX1nuNT=
+5fjqxTB2AIib36Giy79drPfLhFiV0rgi-WRXpYhc-F9hGoUv9yPckzxF-UcZatVH90jXTlsOwZo=
+dYGRZb7QWMw_ZyZV3HOvC-aMrFla1eVnGMbJJ7QNhpPsa_s-P8Y0cfYK"  style=3D"height:=
+49px;width:255px;v-text-anchor:middle;" arcsize=3D"8%" fillcolor=3D"#0056D2=
+">=0A<v:stroke dashstyle=3D"Solid" weight=3D"1px" color=3D"#0056D2"/>=0A<w:=
+anchorlock/>=0A<v:textbox inset=3D"0px,0px,0px,0px">=0A<center dir=3D"false=
+" style=3D"color:#FFFFFF;font-family:sans-serif;font-size:14px">=0A<![endif=
+]-->=0A<span class=3D"button" style=3D"background-color: #0056D2; border-bo=
+ttom: 1px solid #0056D2; border-left: 1px solid #0056D2; border-radius: 4px=
+; border-right: 1px solid #0056D2; border-top: 1px solid #0056D2; color: #F=
+FFFFF; display: inline-block; font-family: 'Helvetica', 'Arial', Sans-serif=
+; font-size: 14px; font-weight: 700; mso-border-alt: none; padding-bottom: =
+12px; padding-top: 12px; padding-left: 32px; padding-right: 32px; text-alig=
+n: center; width: auto; word-break: keep-all; letter-spacing: normal;"><spa=
+n style=3D"word-break: break-word; line-height: 25.2px;">Build more practic=
+al AI skills</span></span>=0A<!--[if mso]></center></v:textbox></v:roundrec=
+t><![endif]--></a></div></td></tr></table>=0A</td></tr></tbody></table></td=
+></tr></tbody></table>=0A<table class=3D"row row-4" align=3D"center" width=
+=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presenta=
+tion" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table=
+ class=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-t=
+able-rspace:0;background-color:#fff;border-radius:0;color:#000;width:700px;=
+margin:0 auto" width=3D"700"><tbody><tr><td class=3D"column column-1" width=
+=3D"100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;te=
+xt-align:left;padding-left:52px;padding-right:52px;vertical-align:top"><tab=
+le class=3D"divider_block block-1" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0"><tr><td class=3D"pad" style=3D"padding-bottom:48px;padd=
+ing-top:48px"><div class=3D"alignment" align=3D"center"><table border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%" s=
+tyle=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td class=3D"divider_inn=
+er" style=3D"font-size:1px;line-height:1px;border-top:1px solid #e8eef7"><s=
+pan style=3D"word-break: break-word;">=E2=80=8A</span></td></tr></table></d=
+iv></td></tr></table></td></tr></tbody></table></td></tr></tbody></table>=
+=0A<table class=3D"row row-5 mobile_hide" align=3D"center" width=3D"100%" b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"r=
+ow-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace=
+:0;background-color:#fff;border-radius:0;color:#000;width:700px;margin:0 au=
+to" width=3D"700"><tbody><tr><td class=3D"column column-1" width=3D"100%" s=
+tyle=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:le=
+ft;padding-left:50px;padding-right:50px;vertical-align:top"><table class=3D=
+"html_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspac=
+e:0"><tr><td class=3D"pad"><div style=3D"font-family:Source Sans Pro,Arial,=
+Sans-serif;text-align:center" align=3D"center">=0A=0A=0A=0A=0A=0A=0A=0A=0A=
+=0A=0A=0A=0A=0A=0A =0A <tr>  <td>             <table id=3D"backgroundTable_=
+feature_banner" role=3D"presentation" border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" class=3D"container" width=3D"100%" style=3D"background-color: #=
+E3EEFF; border-radius: 8px; ">            <tr class=3D"desktop-only">      =
+          <!-- Text Column (Left on Desktop) -->                  <td class=
+=3D"nudge-component-text-column" valign=3D"top" style=3D"text-align: left !=
+important;  vertical-align: top; padding: 32px 24px 24px 32px;">           =
+                                              <h3 style=3D"color: #000000; =
+font-weight: 600; font-size: 22px; line-height: 30px; margin: 0 0 8px;">   =
+                     Build AI skills in 5 minutes a day                    =
+  </h3>                                                                    =
+                                                 <p align=3D"left" dir=3D"l=
+tr" style=3D"font-weight:'normal'; font-family: 'Helvetica', Arial, sans-se=
+rif;  margin: 0 0 8px;">                                                   =
+                          Tap into our free 30 days of GenAI YouTube series=
+. With each 5-minute video, you=E2=80=99ll build confidence with free vers=
+ions of generative AI tools like ChatGPT and Google Gemini.<br><br>No codin=
+g required! Join thousands of others learning to use AI confidently.       =
+                                                                         </=
+p>                                            <!-- CTA block inlined -->   =
+                                                                           =
+                                          <div>                            =
+<div style=3D"background-color: transparent !important; color: #0056D2; dis=
+play: inline-block; font-size: 14px; line-height: 22px; text-decoration: no=
+ne; text-transform: none; vertical-align: middle; font-family: 'Helvetica',=
+ Arial, sans-serif; letter-spacing: 0.005em;">                             =
+   <table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" height=3D"48" align=3D"left">                                    <tb=
+ody>                                        <tr>                           =
+                 <td>                                                <a hre=
+f=3D"https://link.coursera.org/f/a/UQrHk-Z0Cx7lxOTC9baAZw~~/AAQRxRA~/vsLVBN=
+9U8MQ5MEwbwPkwDqE2keB0pmdPQBTKz2tFs5Aj0IjYUOJi5KaqFzH8d7gn6PFNR2rYfNdEWRLPI=
+k2xYahk9gQ5lZdr9-q4URr8cuko8jwPqJJogBlr6TwVMqpvagGpQDennvM8TeKzN6tuPxOoKhom=
+pUXz5SNWwds65x4UvGCFY0XWEwLMLeWjUchwWvp-DIqLKB9Ieu2ib-XMe7J0e3Y1jH9xuLzybdG=
+mk4ndKlNdFSTwi1TpjoE7acFv7-ps9XqpDKLem7kIy4oPACopM6Ok05pbOB6rSegH7n4hoiqkih=
+8u16vW0sie4X1O" target=3D"_blank" style=3D"font-size: 14px; line-height: 22=
+px; text-decoration: none; letter-spacing: 0.01em;"><strong style=3D"color:=
+ #0056D2; font-weight: 600; font-family: 'Helvetica', Arial, sans-serif;">G=
+et started</strong></a>                                            </td>  <=
+!--[if !mso]>-->                                            <td width=3D"10=
+">&nbsp;</td>                                            <td valign=3D"midd=
+le" height=3D"48" class=3D"dark-img" style=3D"display: none; overflow: hidd=
+en; visibility: hidden; mso-hide: all; padding: 4px 0 0 0;">               =
+                                 <a href=3D"https://link.coursera.org/f/a/R=
+SFv1tz_Db3gkIH9AnsLCQ~~/AAQRxRA~/vsLVBN9U8MQ5MEwbwPkwDqE2keB0pmdPQBTKz2tFs5=
+Aj0IjYUOJi5KaqFzH8d7gn4nz5X3JIJjSkXpUJVZYC4jdJg7jYvnkh1_B3WjYxJaM16NWWZ0p2P=
+NWGR9UDPp2sZjBmY21Tt9JDUJg2BNSuDX0dFEOjFuzT9N4LCbGCAcW6YIoHJTq3tmnk90xS2wCD=
+T04WJfQ7NNht9WxNEQ7knYAuk0UslO_Yf7MFnTEtKYmgca12AOvmDFET3RPP4sz7mJQGQ6mvm2m=
+tUSXXuASpgom0qLFMfqhUYEld3D6BGG0nfqPsblU4OTlOQqBw7UAK" target=3D"_blank"><i=
+mg src=3D"https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy=
+/https://coursera-misc.s3.amazonaws.com/mailspin/prod/04_25_2022_06_54_00_a=
+rrow-darkmode.png" height=3D"17" width=3D"17" alt=3D""></a>                =
+                            </td>                                          =
+  <td valign=3D"middle" height=3D"48" style=3D"display: block; display: tab=
+le-cell; padding: 4px 0 0 0;" class=3D"light-img">                         =
+                       <a href=3D"https://link.coursera.org/f/a/sJTV1bw-WTa=
+5Gbv9k-1hQA~~/AAQRxRA~/vsLVBN9U8MQ5MEwbwPkwDqE2keB0pmdPQBTKz2tFs5Aj0IjYUOJi=
+5KaqFzH8d7gno1nvKR0jAJbxPz84byhlOEgc1fV_2hZo8eg2Yx7K8KYzBzYPdS7kkvlu6iZ_T0b=
+vbN54tYYcb73SRXZBQ_sx4_dOoDGFR2sUvxegBVzL-VxBJi6qJm7Uaf-8sAfpcEeBuE1aejRmdH=
+-7pkxJbB4_-cJavP679W9V1fQGWeyFJ-h0VTa6UGvUhUdtm-Q1E1tNoUYAAS8KrZYM2t_1UjhRE=
+Fs0iSRnt6KE_ATwde-oA4ICWYT6S-dFhi0SYL2S44WC" target=3D"_blank"><img src=3D"=
+https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://c=
+oursera-misc.s3.amazonaws.com/mailspin/prod/10_15_2024_20_55_40_cta_arrow.p=
+ng" height=3D"16" width=3D"16" alt=3D""></a>                               =
+             </td>  <!--<![endif]-->                                       =
+ </tr>                                    </tbody>                         =
+       </table>                            </div>                        </=
+div>                            </td>               <td class=3D"nudge-comp=
+onent-icon-column" valign=3D"top" style=3D"width: 96px; vertical-align: top=
+; text-align: center; padding: 32px 32px 24px 0px;">                    <a =
+href=3D"https://link.coursera.org/f/a/FKhYYYUSxy0EeZlt1biGGg~~/AAQRxRA~/vsL=
+VBN9U8MQ5MEwbwPkwDqE2keB0pmdPQBTKz2tFs5Aj0IjYUOJi5KaqFzH8d7gnbEmn3T04AJg1gl=
+R4PajAUJ5M7pOKa2xUMV2MMIYY0FA0_4BioZ5QmIsTRoPi8E0279paiDNoYpygj2tzNcMP3h6XF=
+xlR2m3gpnn2Kf2mm_nwLwKqBw_3MVHmCRj3S1xcFY04t53R5tday07H6oidATL77sF1zp8AzRfH=
+PcK37ha_ij2QujlPNLkXTc36vRpyqWbewfh94BlGtYxqSMj2y9hdV53HD1FIXYObrPDbxNr35tZ=
+yOSrWzzC6pk3PBzFm">                     <img src=3D"https://d3njjcbhbojbot.=
+cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazona=
+ws.com/mailspin/prod/01_30_2025_08_30_01_rocket-transparent.png" alt=3D"roc=
+ket-transparent" style=3D"width: 96px; height: auto;" width=3D"96" class=3D=
+"callout-block-card-img">                    </a>                  </td>   =
+                  </tr>              </table>  </td></tr>=0A=0A=0A</div></t=
+d></tr></table></td></tr></tbody></table></td></tr></tbody></table>=0A<tabl=
+e class=3D"row row-6 desktop_hide" align=3D"center" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+so-table-lspace:0;mso-table-rspace:0;mso-hide:all;display:none;max-height:0=
+;overflow:hidden"><tbody><tr><td><table class=3D"row-content stack" align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"mso-table-lspace:0;mso-table-rspace:0;mso-hide:all;display=
+:none;max-height:0;overflow:hidden;background-color:#fff;color:#000;border-=
+bottom:24px solid transparent;border-left:24px solid transparent;border-rad=
+ius:0;border-right:24px solid transparent;border-top:24px solid transparent=
+;width:700px;margin:0 auto" width=3D"700">=0A<tbody><tr class=3D"reverse">=
+=0A<td class=3D"column column-1 first" width=3D"66.66666666666667%" style=
+=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;b=
+ackground-color:#e3eeff;padding-left:24px;padding-right:24px;vertical-align=
+:top"><div class=3D"border">=0A<table class=3D"heading_block block-1" width=
+=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presenta=
+tion" style=3D"mso-table-lspace:0;mso-table-rspace:0;mso-hide:all;display:n=
+one;max-height:0;overflow:hidden"><tr><td class=3D"pad" style=3D"padding-bo=
+ttom:12px;padding-top:12px;text-align:center;width:100%"><h3 style=3D"margi=
+n:0;color:#0f1114;direction:ltr;font-family:Helvetica,Arial,Sans-serif;font=
+-size:22px;font-weight:700;letter-spacing:normal;line-height:1.2;text-align=
+:left;margin-top:0;margin-bottom:0;mso-line-height-alt:26px"><strong>Build =
+AI skills in 5 minutes a day</strong></h3></td></tr></table>=0A<table class=
+=3D"paragraph_block block-2" width=3D"100%" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-tab=
+le-rspace:0;word-break:break-word;mso-hide:all;display:none;max-height:0;ov=
+erflow:hidden"><tr><td class=3D"pad" style=3D"padding-bottom:24px"><div sty=
+le=3D"color:#0f1114;direction:ltr;font-family:Helvetica,Arial,Sans-serif;fo=
+nt-size:15px;font-weight:400;letter-spacing:0;line-height:1.5;text-align:le=
+ft;mso-line-height-alt:23px">=0A<p style=3D"margin:0;margin-bottom:15px">=
+=0ATap into our free <a href=3D"https://link.coursera.org/f/a/0ue_wHHBafRTa=
+yVJCjPpwQ~~/AAQRxRA~/vsLVBN9U8MQ5MEwbwPkwDqE2keB0pmdPQBTKz2tFs5Aj0IjYUOJi5K=
+aqFzH8d7gnQZ18GFQjx_I_SpftbcgQhqMUpR538b39zZmlwq6Mlj3eVDC6R_Go_4CqSz76RrXEd=
+XXCOTa5qv4znBhGktjOxPAn-CAKwaLYCWJ-_ofVUej5OLe8QLy-rrVqenB3fVl67I1bPBwmi3-g=
+h0IF6LDcAjFHzComoi03wkS-pe_Gn8-XWAvLCM-lvm3Hf_Vs0CXUUdfUs5iLlKvmdqPwB4wURIT=
+UJhdxGTfvHzZgVOCOUUMHOO-vYSqNHNo4e-BisX-Y" target=3D"_self" style=3D"text-d=
+ecoration: underline; color: #0056D2;"><strong>30 days of GenAI YouTube ser=
+ies</strong></a>. With each 5-minute video, you=E2=80=99ll build confidence=
+ with free versions of generative AI tools like ChatGPT and Google Gemini.<=
+/p>=0A<p style=3D"margin:0;margin-bottom:15px">No coding required! Join tho=
+usands of others learning to use AI confidently.</p>=0A<p style=3D"margin:0=
+">=0A<a href=3D"https://link.coursera.org/f/a/0wcdDgxft3SHgMK_gvu3ew~~/AAQR=
+xRA~/vsLVBN9U8MQ5MEwbwPkwDqE2keB0pmdPQBTKz2tFs5Aj0IjYUOJi5KaqFzH8d7gn9eJGMP=
+hulnoKKowBFhR-RIkMIPuAXssb3TpV_kt66Rbsr2pTuTLFy7AgrXdz-8fO2fR55yNu0inGnEQ2d=
+uqd7A0UKZ4cn4-vXn1XMLvoIHI_2CA0FleEVKdwDAejzjaEPgpxjgIngqk4B4nJSgEYjnQUBY_S=
+fOVv2vC7TOWTH10TtB3mvK6DiyYZBskNG98UmCOjKypngaNQ1Z4NXfoAufX6Mf7ZAyHeYi7xk2i=
+VHc0n2AGKzwhEc_I9eLXV6vnH" target=3D"_blank" style=3D"text-decoration: none=
+; color: #0056D2;" rel=3D"noopener"><strong>Get started=E2=86=92</strong></=
+a><a href=3D"https://link.coursera.org/f/a/fA-74PBr-MBo1c0i-oPrYw~~/AAQRxRA=
+~/vegK0j-eBMA0bKDx0dxBxKrxqO58dBWJCGv1hpfUC6oPQTsa1ZQrpwaw5GrjsTM6jAUzSR_rK=
+BsUn3WnobuwlZlBq3VGq1hOma5SARgzR9elSqp5lDMVCEeBcGxlt_uFs8ITPRGbggZQ_qhBITwU=
+aHqOqafiLm7cJZLrTcX4tXhh-y0gpIDqxyH0PzPa8m7uL3-Ngq5ZE4tMzmDgIdok08sINYgvhNI=
+7c622apj6z-lgLIzmWOmXlgtac3MW25Zj4rXfaNqSAEnEtEPnKUEyinImjDfSP01M-COjqMcKZ3=
+GB36tCvb88sg7-cKFtDQQI" target=3D"_blank" style=3D"text-decoration: none; c=
+olor: #0056D2;" rel=3D"noopener"></a></p>=0A</div></td></tr></table>=0A</di=
+v></td>=0A<td class=3D"column column-2 last" width=3D"33.333333333333336%" =
+style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:l=
+eft;background-color:#e3eeff;padding-bottom:24px;padding-left:24px;padding-=
+right:24px;padding-top:24px;vertical-align:top"><div class=3D"border"><tabl=
+e class=3D"image_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-=
+table-rspace:0;mso-hide:all;display:none;max-height:0;overflow:hidden"><tr>=
+<td class=3D"pad" style=3D"width:100%"><div class=3D"alignment" align=3D"ce=
+nter"><div style=3D"max-width:96px"><a href=3D"https://link.coursera.org/f/=
+a/pz0KPF_DAsAF0QfhMZXlug~~/AAQRxRA~/jSgbghdeJJkSxJOVJ94ZAMiK3tnTSJRMp_5CEbJ=
+_leXICJzCrF3dCEe_AwyEy7lFtDjF4h4YOQqtLg9wYwooR1pRuF2FWuHWaSrbhgm8UO04T-er3s=
+qaHm6_ZZN9sLRr5YZOaO60h66aQTk1D4Bfw9cCWT_S_kyHwtX85EvTBQAOHrwJ6K6nbwhuxufKN=
+VJoi5X5QiiQdGq4LVhOu8uje6g1RSkl1FDEjdL0ECd3xTpzrxfWB3wwTpxHG9hcAlNE4gun05Ym=
+nOa7SdCN-VXjEia5Uu57nsk4xgcyLypIUaPZn29ZP2_xwLUMkcl6ediFFXeyf-yULpMBU8mlyzn=
+t2qBHRqCBaPJiVsmn-h7A65k~" target=3D"_blank" style=3D"outline:none" tabinde=
+x=3D"-1"><img src=3D"https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1=
+/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/01_30_2025=
+_08_30_01_rocket-transparent.png=3Fw=3D96" style=3D"display:block;height:au=
+to;border:0;width:100%" width=3D"96" alt=3D"Icon" title=3D"Icon" height=3D"=
+auto"></a></div></div></td></tr></table></div></td>=0A</tr></tbody>=0A</tab=
+le></td></tr></tbody></table>=0A<table class=3D"row row-7" align=3D"center"=
+ width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pr=
+esentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td>=
+<table class=3D"row-content stack" align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0=
+;mso-table-rspace:0;background-color:#fff;border-radius:0;color:#000;width:=
+700px;margin:0 auto" width=3D"700"><tbody><tr><td class=3D"column column-1"=
+ width=3D"100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:=
+400;text-align:left;padding-left:52px;padding-right:52px;vertical-align:top=
+"><table class=3D"divider_block block-1" width=3D"100%" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspa=
+ce:0;mso-table-rspace:0"><tr><td class=3D"pad" style=3D"padding-bottom:48px=
+;padding-top:48px"><div class=3D"alignment" align=3D"center"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"1=
+00%" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td class=3D"divid=
+er_inner" style=3D"font-size:1px;line-height:1px;border-top:1px solid #e8ee=
+f7"><span style=3D"word-break: break-word;">=E2=80=8A</span></td></tr></tab=
+le></div></td></tr></table></td></tr></tbody></table></td></tr></tbody></ta=
+ble>=0A<table class=3D"row row-8" align=3D"center" width=3D"100%" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-=
+table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-conte=
+nt stack" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;backg=
+round-color:#fff;border-radius:0;color:#000;width:700px;margin:0 auto" widt=
+h=3D"700"><tbody><tr><td class=3D"column column-1" width=3D"100%" style=3D"=
+mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;paddi=
+ng-left:52px;padding-right:52px;vertical-align:top">=0A<table class=3D"imag=
+e_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0=
+"><tr><td class=3D"pad" style=3D"padding-bottom:36px;width:100%;padding-rig=
+ht:0;padding-left:0"><div class=3D"alignment" align=3D"center"><div class=
+=3D"fullWidth" style=3D"max-width:596px"><a href=3D"https://link.coursera.o=
+rg/f/a/PE8-5mztFD85X0cKfsYGsg~~/AAQRxRA~/WZVhzkDmfcdQ-pRbwb6gZcfdKR02eAJrxn=
+swRgVjEeA7hpZoWouJMggCmIL29sgLQH7qW5FC9ivI59mzbVc1ruCLpD5UmLWgWCpZVzOlOLoig=
+RQ3WSBfPgbMF9tb5EmqpJKraIbHnPYRo1Idxb51gE6Rm0KSI71XwIZy7OzV7vq-3r6htfCBb3rb=
+cjmFRjHLbM8kLG2yHKshCfj9N65RVbmEXrCpf6zdzTrvvfbhbt-2SIYR_Y4RC2FVyrObEhrrF20=
+AMey9BYQiOt6I92EVm7mc7hbjQbFCtJt6WMmrgBOVXA5JM9MLPeE4f1-C6X-Ai98nhxG6DZBHSm=
+uGZaQUz8L2iv6qGPQEmY4fcuFk16o~" target=3D"_blank" style=3D"outline:none" ta=
+bindex=3D"-1"><img src=3D"https://d3njjcbhbojbot.cloudfront.net/api/utiliti=
+es/v1/imageproxy/https://images.ctfassets.net/wp1lcwdav1p1/2ZYbuhcdEtYE04OC=
+OrLZnq/4be43e6264a225d1a8c733b43b01ef55/GettyImages-2179796719.jpg=3Fborder=
+=3D1,ffffff&amp;border-radius=3D8,8,8,8&amp;border-radius-inner=3D8,8,8,8" =
+style=3D"display:block;height:auto;border:0;width:100%" width=3D"596" alt=
+=3D"3 prompting tips from Dr. Jules White" title=3D"3 prompting tips from D=
+r. Jules White" height=3D"auto"></a></div></div></td></tr></table>=0A<table=
+ class=3D"heading_block block-2" width=3D"100%" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso=
+-table-rspace:0"><tr><td class=3D"pad" style=3D"padding-bottom:32px;text-al=
+ign:center;width:100%"><h2 style=3D"margin:0;color:#0f1114;direction:ltr;fo=
+nt-family:Helvetica,Arial,Sans-serif;font-size:32px;font-weight:700;letter-=
+spacing:normal;line-height:1.2;text-align:left;margin-top:0;margin-bottom:0=
+;mso-line-height-alt:38px">=0A<strong>3 prompting techniques to know</stron=
+g>=0A</h2></td></tr></table>=0A<table class=3D"paragraph_block block-3" wid=
+th=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-wor=
+d"><tr><td class=3D"pad" style=3D"padding-bottom:16px"><div style=3D"color:=
+#0f1114;direction:ltr;font-family:Helvetica,Arial,Sans-serif;font-size:18px=
+;font-weight:400;letter-spacing:0;line-height:1.4;text-align:left;mso-line-=
+height-alt:25px"><p style=3D"margin:0">Learn go-to prompting techniques fro=
+m Dr. Jules White, whose popular GenAI courses have already taught thousand=
+s of learners on Coursera. Dr. White is a Professor of Computer Science at =
+Vanderbilt University, has published 170+ papers, has been celebrated by th=
+e National Science Foundation, and is a National Science Foundation CAREER =
+Award recipient.</p></div></td></tr></table>=0A<table class=3D"paragraph_bl=
+ock block-4" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;word=
+-break:break-word"><tr><td class=3D"pad"><div style=3D"color:#0056d2;direct=
+ion:ltr;font-family:Helvetica,Arial,Sans-serif;font-size:14px;font-weight:7=
+00;letter-spacing:.07px;line-height:1.4;text-align:left;mso-line-height-alt=
+:20px"><p style=3D"margin:0">=0A<a href=3D"https://link.coursera.org/f/a/dD=
+9jjPJhcEExBxu28iE3ew~~/AAQRxRA~/WZVhzkDmfcdQ-pRbwb6gZcfdKR02eAJrxnswRgVjEeA=
+7hpZoWouJMggCmIL29sgLQH7qW5FC9ivI59mzbVc1ruCLpD5UmLWgWCpZVzOlOLoigRQ3WSBfPg=
+bMF9tb5EmqiKLqrExQS7GfNhM_EmmmWdFIObfjE1j7qoo9VhBBcnaPzc8RDZ2xn_cKdzG6nsldm=
+vxka2pug_VQnOyi7_RHq-6v41O-1lLr6ebroxFTa2larQNbcpz2kCnu0u77FU8rYKOGaQkz1axQ=
+4-okWBmt-VmHbwD1AmbnuOfGoqgSNBezz-HOU3tPxT6r_COhqo4rlQu6Rdsuty0FTFgl9zVvQer=
+9kJ6cSs1LTMlO1251Jxg~" target=3D"_blank" style=3D"text-decoration: none; co=
+lor: #0056D2;" rel=3D"noopener"><strong>Get pro tips for prompting</strong>=
+ =E2=86=92</a></p></div></td></tr></table>=0A</td></tr></tbody></table></td=
+></tr></tbody></table>=0A<table class=3D"row row-9" align=3D"center" width=
+=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presenta=
+tion" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr>=0A<td><ta=
+ble class=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0;background-color:#fff;border-radius:0;color:#000;width:7=
+00px;margin:0 auto" width=3D"700"><tbody><tr><td class=3D"column column-1" =
+width=3D"100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:4=
+00;text-align:left;padding-left:52px;padding-right:52px;vertical-align:top"=
+><table class=3D"divider_block block-1" width=3D"100%" border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspac=
+e:0;mso-table-rspace:0"><tr><td class=3D"pad" style=3D"padding-bottom:48px;=
+padding-top:48px"><div class=3D"alignment" align=3D"center"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"1=
+00%" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td class=3D"divid=
+er_inner" style=3D"font-size:1px;line-height:1px;border-top:1px solid #e8ee=
+f7"><span style=3D"word-break: break-word;">=E2=80=8A</span></td></tr></tab=
+le></div></td></tr></table></td></tr></tbody></table></td>=0A</tr></tbody><=
+/table>=0A<table class=3D"row row-10" align=3D"center" width=3D"100%" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"=
+mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-c=
+ontent stack" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0=
+;background-color:#fff;border-radius:0;color:#000;width:700px;margin:0 auto=
+" width=3D"700"><tbody><tr><td class=3D"column column-1" width=3D"100%" sty=
+le=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left=
+;vertical-align:top"><table class=3D"paragraph_block block-1" width=3D"100%=
+" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" st=
+yle=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tr><td=
+ class=3D"pad" style=3D"padding-left:52px;padding-right:52px"><div style=3D=
+"color:#636363;direction:ltr;font-family:Helvetica,Arial,Sans-serif;font-si=
+ze:13px;font-weight:400;letter-spacing:0;line-height:1.5;text-align:left;ms=
+o-line-height-alt:20px">=0A<p style=3D"margin:0;margin-bottom:20px"><sup>1<=
+/sup> &nbsp;Median salary and job opening data are sourced from Lightcast=
+=E2=84=A2 Job Postings Report. (4/1/2024 - 4/1/2025)</p>=0A<p style=3D"marg=
+in:0;margin-bottom:20px">=0A<sup>2</sup> <a href=3D"https://link.coursera.o=
+rg/f/a/bajjksuvaTC54_BjgLV-Mg~~/AAQRxRA~/zJqTmaYRR80SiJMYtKvIBHJ_0-UAA_WlJl=
+7xRdk75JOpcgI-PKtSYqvvPfQGoqXHma9glZTTS1nEBNnGjBtpX3vBQ-C6TyLIVtTjTLu80wmpQ=
+-vDJsVW2MKh5YTGw2NC1ee-442h6RJVtR-fBByDoQTTGclM_B-Px9_kScVWz5LXibhwQL_EV1cp=
+LHUSQeFgEvJMGEgV_IvaxCpvcKJtBq6zEeyJx5OuABWyIGxb2tkPt0lMFqKQXH4FSS9JNOkJPcS=
+4GLmYvHZl_C4lgG2qZDJLjWpUX1qYA88h6BrYmxNtvtmWmyNep5JeQEzmMcfZrgkaxENuCdLeyv=
+nfrmGehw~~" target=3D"_blank" style=3D"text-decoration: underline; color: #=
+636363;" data-mce-attribute-name-1 data-mce-attribute-value-1 rel=3D"noopen=
+er">World Economic Forum. The Future of Jobs Report 2025</a> &nbsp;</p>=0A<=
+p style=3D"margin:0">=0A<sup>3 </sup><a href=3D"https://link.coursera.org/f=
+/a/T7v9y_dbVHhw48fIrBI9bw~~/AAQRxRA~/X3teJ4UnfsrWFrLCl2EaTvtUyxpp74jxLfjWKU=
+r-ZNglkxdtJ6G_WiebicYJpd_9GM65f95CwFslaC2bIUMlvY7Zyc_Fc20CjthI58GZXkJmk4y1G=
+cDJ5A8WXwtaI7t3gZh_8S6jj5zZD2X76q9HI9MZKUMLgmTjNQbB3mkMgl8AZSv6aIAJLq4OqPIw=
+BmQkuRmuSkrgVdQugI-rR4e5EYPue8-8_koYDTJ3wovPnPXKEeAPogKjCmpCQnvf49xgd7RMjKx=
+D2c7_r2_IMxgaMUocPOZKntKAQEISqgcEK4_0xFxSvvfVW_RpmuvHHn9UjmNah3Ws8q93C9qHpw=
+HjzQ~~" target=3D"_blank" style=3D"text-decoration: underline; color: #6363=
+63;" data-mce-attribute-name-1 data-mce-attribute-value-1 rel=3D"noopener">=
+Project Management Institute. Global Project Management Job Trends 2023</a>=
+&nbsp;</p>=0A</div></td></tr></table></td></tr></tbody></table></td></tr></=
+tbody></table>=0A<table class=3D"row row-11" align=3D"center" width=3D"100%=
+" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" st=
+yle=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table class=
+=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-r=
+space:0;background-color:#fff;border-radius:0;color:#000;width:700px;margin=
+:0 auto" width=3D"700"><tbody><tr><td class=3D"column column-1" width=3D"10=
+0%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-ali=
+gn:left;padding-left:52px;padding-right:52px;vertical-align:top"><table cla=
+ss=3D"divider_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-tab=
+le-rspace:0"><tr><td class=3D"pad" style=3D"padding-bottom:48px;padding-top=
+:48px"><div class=3D"alignment" align=3D"center"><table border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%" style=3D=
+"mso-table-lspace:0;mso-table-rspace:0"><tr><td class=3D"divider_inner" sty=
+le=3D"font-size:1px;line-height:1px;border-top:1px solid #e8eef7">=0A<span =
+style=3D"word-break: break-word;">=E2=80=8A</span>=0A</td></tr></table></di=
+v></td></tr></table></td></tr></tbody></table></td></tr></tbody></table>=0A=
+<table class=3D"row row-12" align=3D"center" width=3D"100%" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-=
+lspace:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content sta=
+ck" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;background=
+-color:#fff;border-radius:0;color:#000;width:700px;margin:0 auto" width=3D"=
+700"><tbody><tr class=3D"reverse">=0A<td class=3D"column column-1 first" wi=
+dth=3D"50%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;=
+text-align:left;padding-bottom:5px;padding-left:52px;padding-right:52px;pad=
+ding-top:5px;vertical-align:top"><div class=3D"border"><table class=3D"menu=
+_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0=
+"><tr><td class=3D"pad" style=3D"color:#5b6780;font-family:Helvetica,Arial,=
+Sans-serif;font-size:14px;font-weight:700;text-align:left"><table width=3D"=
+100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"presentation=
+" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td class=3D"alignmen=
+t" style=3D"text-align:left;font-size:0"><div class=3D"menu-links">=0A<!--[=
+if mso]><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" align=3D"left" style=3D""><tr style=3D"text-align:left;"><![endi=
+f]--><!--[if mso]><td style=3D"padding-top:6px;padding-right:1px;padding-bo=
+ttom:6px;padding-left:0px"><![endif]-->=0A<a href=3D"https://link.coursera.=
+org/f/a/gbsxS75mY0ZIFxYHmSKewg~~/AAQRxRA~/Z24Pl_bdgniYlr_sSjQcBgBGObfb-3cOk=
+viWn-t7V9uv4DqW-tIYJJ_Fg6SwTob67znlADzMdSnWUP4n3DYNIIUeeHfvoHzbSr2TwJdR5Qe0=
+_OxJ83F-WV6yq_9TlwWIvb9AmXOFRSZXinhn-bkiBEIIUVZjO27qYWi52dIWpMPfPoM6j4sFIKS=
+TdMnZOSM29qvfCrxYF2U1o5tueZD-OaGwcjsgxH4Us4Baz5WMELEX-eMSPtvAt0w1mwqCUlS1xJ=
+KadDVVQbk6-hgYbDMtn2mO52LZn8M-v0C4dTWVi1I2dZLX6F1dMbMUU8qd8Wt8" target=3D"_=
+blank" style=3D"mso-hide:false;padding-top:6px;padding-bottom:6px;padding-l=
+eft:0px;padding-right:1px;display:block;color:#5b6780;font-family:'Helvetic=
+a', 'Arial', Sans-serif;font-size:14px;text-decoration:none;letter-spacing:=
+normal;"> Help</a><!--[if mso]></tr></td><![endif]--><!--[if mso]></tr><tr =
+style=3D"text-align:left;"><td style=3D"padding-top:6px;padding-right:1px;p=
+adding-bottom:6px;padding-left:0px"><![endif]-->=0A<a href=3D"https://link.=
+coursera.org/f/a/GsHYCgz-0IZ55aQPMdfk_A~~/AAQRxRA~/LuJwX2XyjeTru4J11lwxWpdr=
+58ZYaHCuuy5THLu8DoLYPF7o7st0en16aDfNlbt7aNhOhGzwod-xhzSrunQtkqKqgr5r2WLvdRT=
+o-b9ka9fRtKBqP3ZCiObVbGB3X8ExmeUKtKl5zQZpw3U6iHe-nsJhtp_rLdEvwxhsbjTFMLjxWN=
+fGJumrcetFNy1-whv7DaXVek5DG-4d-WAJdd_VCYgbJYdVd0SW3l6rngnmHRkLkVGtTePW9hMPN=
+pz3A9DjCXdsgQRFOJrOPKm0ukXWU_T3ZCcjPexNhJPEfM_RsOsIj1gK-EE_0EJRzGM8RGOpZSLS=
+uOUJRwl_44R4QbPiSjSg4d6VZmcwvqDy-t4Hfv8u6ZnIxfXi_8FBnCTdvHhdIerVTQHp_24ChOL=
+kzxCQ9CPIKPS4woZG2wZKRV3ukHebFNM1IPkIWBHlnBCli75Yk7u1MqxrTgIOtIw5mTqBkscv0i=
+mrp3UgHh7JAbj1LVdG5zIrlu__6_Rh10zOiZuN33v9AysXqmGf24epjSEYBhnYGy2fhhD3AW1gz=
+l0hbWl53jOZeJ99Dg__X29Boqe5Wr6KzDrmBH5mW5--POXHE5YQWS5oumc7rZjDnyd9Qvll6jh1=
+GyB8jYTDSH2CQiZDYyCBEY_xT6abhu-h_nWJm9B9u_tCSDmd5jBF7QrsEKpG6sdNh5wuyD0uOss=
+FG7z8TXGIQyT6kKCGzrqcS3wb-lMK8XiURKlE5UjV-_MQguNtaDmMflisdmH3RjVFhrx0yBNuZ1=
+XHVxp2XO5C8JizpJlSd1loYKgOYlGkFpT5Fgk32NzAamas2Z4ieu0Gzcu4W1GwHk2T9IbOF5Yt1=
+7r_Pauou_cvgLytjAxZasoTLAwZFg5bBvJmLBsvPFEclfTznmKwDRbjc3kLs5ZU-QxoszNcbEfw=
+HOtR2oHBeErqWVLDPg5BpG13XwYjmMFRDbaduetrz1sOlAbflKGRfrbiLJ_T9fVUZCFxNcu6KcV=
+OaNiWoc7CD4T2USXkUAQP3eMXYKOZhCEFhwT4zVL51vabbbzwAtqWY_-1T5zgl7Z5TK13A1F4iJ=
+MR5BS0A_Oxcf0HLe6Wq0D538e_Pgue7vo1vmBHe0rY1Bkqpqjtq7uwjZjSJoSr4BeHiAJblriOz=
+srCTllZlXKlr5WkqPWivAcwc_pgJ0yaXyCDie2GjZ8hZ_RR38kTBrVzIqLyMCqyRXZdsdbundo7=
+W8H9JhaVWimFNsGizBv4bRwls2IrQEjekAw0zJRrTpe9Hh3Uk0douMpLx7eDkivQqbUSofbW703=
+iFFWneunCohg7zg1L21cCatUUcDSLHJTfTw9j1mOuE9W5gv8-gNGP3aRusmTw6O0zsg~~" targ=
+et=3D"_blank" style=3D"mso-hide:false;padding-top:6px;padding-bottom:6px;pa=
+dding-left:0px;padding-right:1px;display:block;color:#5b6780;font-family:'H=
+elvetica', 'Arial', Sans-serif;font-size:14px;text-decoration:none;letter-s=
+pacing:normal;">Unsubscribe</a><!--[if mso]></tr></td><![endif]--><!--[if m=
+so]></tr><tr style=3D"text-align:left;"><td style=3D"padding-top:6px;paddin=
+g-right:1px;padding-bottom:6px;padding-left:0px"><![endif]-->=0A<a href=3D"=
+https://link.coursera.org/f/a/sl_fM0sTQyoqgwJ25m-a_Q~~/AAQRxRA~/UubPa8sX6qC=
+leSeu7NZmDId4oF_fhzsaDrCu-gP-eoL8k4PdhifwyiDBLZF0jencRpUwEoa2EE0bQtlAFH9tiP=
+zBEBT72m4e891To2xeOno_3oKWbQ1h0GyStREzyZLmSpDLvJSTigTy4od4BZhmlORd9PD59fuoy=
+ezH7I8fNfXLbLMnuAIASA2d13LebQ140-Zf5IeZU-YfN8XoTVj1g25gWgiPKQ9nt0BMIqe2odiN=
+ej_1nbRu_SKeKrxiDPOak8QqqgH6yFu-u7EbBCnGLABCWGELwDelKgkP5-ifK9A~" target=3D=
+"_blank" style=3D"mso-hide:false;padding-top:6px;padding-bottom:6px;padding=
+-left:0px;padding-right:1px;display:block;color:#5b6780;font-family:'Helvet=
+ica', 'Arial', Sans-serif;font-size:14px;text-decoration:none;letter-spacin=
+g:normal;">Privacy Notice</a><!--[if mso]></tr></td><![endif]--><!--[if mso=
+]></tr></table><![endif]-->=0A</div></td></tr></table></td></tr></table></d=
+iv></td>=0A<td class=3D"column column-2 last" width=3D"50%" style=3D"mso-ta=
+ble-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;padding-bot=
+tom:5px;padding-top:5px;vertical-align:top"><div class=3D"border">=0A<table=
+ class=3D"image_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-t=
+able-rspace:0"><tr><td class=3D"pad" style=3D"padding-left:8px;width:100%;p=
+adding-right:0"><div class=3D"alignment" align=3D"left"><div style=3D"max-w=
+idth:171.5px">=0A<a href=3D"https://link.coursera.org/f/a/ACv8lb78zkzBQ2CNc=
+C27Ag~~/AAQRxRA~/0k0DMZETdHeDE2uhyeigUSh7ni6qd0Z2svRQ6cVILHmvL8zMyQRicIANZn=
+Eit0j8r9jWH1whSfLGCjjxIzertEAolm4C8ZDY55-1_wG8zvqUk-05AcYsPNBBtqo4_wbJ9iB3h=
+grHMPaaSvRiAzzIL_LAtOxJDwgFuM7SBRgr1M7BMZYJlT0afehyWoarzKIgWU85fNaHGrueOhhG=
+k2d4x07PdaZ2Vwk2ANKg8H2AaMSNAx9srgyPy1yK86SeeAIcH1QMm2JeDITB6pML8u2wUlkHY9D=
+I8nrc4Fm81fdcjkQ~" target=3D"_blank" style=3D"outline:none" tabindex=3D"-1"=
+><img src=3D"https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imagepr=
+oxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/09_23_2022_00_50_4=
+0_google-play-badge-EN.png" style=3D"display:block;height:auto;border:0;wid=
+th:100%" width=3D"171.5" alt=3D"Google Play" title=3D"Google Play" height=
+=3D"auto"></a>=0A</div></div></td></tr></table>=0A<table class=3D"image_blo=
+ck block-2" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr>=
+<td class=3D"pad" style=3D"padding-bottom:12px;padding-left:18px;padding-to=
+p:12px;width:100%;padding-right:0"><div class=3D"alignment" align=3D"left">=
+<div style=3D"max-width:150.5px"><a href=3D"https://link.coursera.org/f/a/J=
+W1mkvD7WpWzh09na74Z-A~~/AAQRxRA~/0k0DMZETdHeDE2uhyeigUSh7ni6qd0Z2svRQ6cVILH=
+mvL8zMyQRicIANZnEit0j8OAoEDppoU04sciTIRXuK17JlE-cs-HUvcNtEGd9wNKNnCSPXVtfu-=
+O05nhrRWXDX18_jfM_nn0QsY9Wi60d3hWrUX33akfa-jmy79PwDpUKyZR9hdfOUyw2H-vejopZG=
+IdRMaFlnNqYudNBJU8h6VdqRzxaTAeMqz96WK0WV4x3U81RgfO0qOEX7-5l0dMJgFTuYEQCh0A8=
+QmNXf67njLMh6yfk7LJIxFMoP1nNZlcA~" target=3D"_blank" style=3D"outline:none"=
+ tabindex=3D"-1"><img src=3D"https://d3njjcbhbojbot.cloudfront.net/api/util=
+ities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/04=
+_25_2022_04_36_29_btn-app-store.png" style=3D"display:block;height:auto;bor=
+der:0;width:100%" width=3D"150.5" alt=3D"iOS App" title=3D"iOS App" height=
+=3D"auto"></a></div></div></td></tr></table>=0A<table class=3D"html_block b=
+lock-3" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td =
+class=3D"pad"><div style=3D"font-family:Source Sans Pro,Arial,Sans-serif;te=
+xt-align:center" align=3D"center"><div class=3D"content-labels content-labe=
+ls--cs content-labels--social StageColumn_contentLabels__u4zmN">=0A  <div c=
+lass=3D"hidden-content-label hidden-content-label--cs"></div>=0A  <div clas=
+s=3D" undefined" style=3D"padding: 16px 0px 16px 16px; text-align: left;">=
+=0A    <span style=3D"padding: 0px 5px 0px 0px;"><a href=3D"https://link.co=
+ursera.org/f/a/3xoeVfPqMPvPNEjDEMfPOg~~/AAQRxRA~/rVbVSn7LGIy5drUDsueuTJjxsd=
+Y1ZGTFq2th6f16dPaF3Ja2aGJpqXqQrT0MnrvmxcnvZ9REP74kSSV99hrUrOcHMXguzo-c5ol2V=
+ZEtRwD8KHroYWSmsQLeC3qGxOweZztBR6X4UjbO3Xy0dy4_5y_Z0tR6MZy6V5Fu7JZ0U-qnpFv5=
+dHGfMgrjavkSOSdP_FKGjfVIHA6uGdI9vNZkRj2M_gg3fccXvFouJ8nwF5VHGN3q9_iytvA4bWE=
+lAb2EEqhDJ0ym7IRCR9oQfuZkb3jMR_4iSBPe7mCH_GPtd8E~"><img alt=3D"Facebook" pr=
+efix=3D"https://www.facebook.com/" src=3D"https://d3njjcbhbojbot.cloudfront=
+.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/ma=
+ilspin/prod/08_06_2024_20_38_11_Facebook_Icons.png" target=3D"_blank" title=
+=3D"Facebook" width=3D"28" style=3D"height:28px; width: 28px;" height=3D"28=
+"></a></span>=0A    <span style=3D"padding: 0px 4px;">&nbsp;=0A    <a href=
+=3D"https://link.coursera.org/f/a/hTzM1H0Fwhx8pIou8worEw~~/AAQRxRA~/KnOCdEc=
+8FDX9jBrzZkFmw7JQGMvkL2JZ7jdMw-WVb6grpl24ExWnMru1UAA3w9O5s6sRr8WTekb2HDEoHC=
+xCjdQGkKhVv91GyO6lszmL0SO2SCDXCraymB4QVmQdgvky-iy9ffqHOX-tgu-L1emb0zbb47Ef6=
+wSuvJIKxMiljKNxOUTyajuZ418AcxIlfPk6ltG0SoTky4TkAiEWW4AReDQcyXtr5POxLsTDDq0Q=
+IaJLIZfNhF0gj6STe7J3QrSJT92MfdQasEHhXofqzdrOjDybMI_LFh-VxvxKW_FPzbU~"><img =
+alt=3D"X" prefix=3D"https://x.com/" src=3D"https://d3njjcbhbojbot.cloudfron=
+t.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/ma=
+ilspin/prod/08_06_2024_20_38_48_X_Icons.png" target=3D"_blank" title=3D"X" =
+width=3D"28" style=3D"height:28px; width: 28px;" height=3D"28"></a></span>=
+=0A    <span style=3D"padding: 0px 5px;">&nbsp;<a href=3D"https://link.cour=
+sera.org/f/a/oK8c9HCmk2pRSZKIs72CCA~~/AAQRxRA~/V0Q9V8Eg7rQJOvnJeNk21T28rKAM=
+lBlmMTpIA2AaDSsMzXMV1dulFasHLX16exuaKMYEBsvqPP5Ejc_BYJW7D1C48nMq4qMbPQ92YML=
+qK8d581NqidT5IkEa91BGLECpOx0H-Tq6ledXFYoBhr3JV4JA5oG2119zeLeh22CvX5n4GrrPDz=
+uB0mgQKjLFrPE5esD27abGlJMwK7ZLhAHR5ogXrpoYb4S-lQfqMN0Tk4Bky_n0stbizQUeCoDe5=
+P9Av6wKMibNtrI4Y9Q9T6xtvxg_YU7AOP5CyEQdwsqSNpE~"><img alt=3D"Instagram" pre=
+fix=3D"https://instagram.com/" src=3D"https://d3njjcbhbojbot.cloudfront.net=
+/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspi=
+n/prod/08_21_2024_16_54_44_instagram.png" target=3D"_blank" title=3D"Instag=
+ram" width=3D"28" style=3D"height:28px; width: 28px;" height=3D"28"></a></s=
+pan>=0A    <span style=3D"padding: 0px 7px;">&nbsp;<a href=3D"https://link.=
+coursera.org/f/a/2WMXawvGsLp1yYNGPkv25w~~/AAQRxRA~/KN_tSIZK7tERjNL3NsIYE3r3=
+CfwyLSJDtas3LwO7DTtQlMK7A4-3sLcR8IUGUP_eCaG3urbnCh6uDLfqPhPscP_XQsEspzTpOhX=
+hc5pJB49WXD2_6F0dZrZ3ew3Y210WuT_Ze4J8_SQemBifECCn3tuK_2oFrJu8Unkbz64IGDxrG_=
+CpiGU6cD25JYW7BvcIHFZ1YSI45oQKDoNNZxXOkCjwVSdP-tpqgcWxnLGCwrv-a7RIfwkH_OEg9=
+KHk5DFY0QX3VlMJY53BKgdWf2AvwMKa12F9IPZ6UhJI4qc7Owqh555r9dxodA0Z9WtS5Y8i"><i=
+mg alt=3D"LinkedIn" prefix=3D"https://www.linkedin.com/" src=3D"https://d3n=
+jjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-mis=
+c.s3.amazonaws.com/mailspin/prod/08_06_2024_20_38_29_LinkedIn_Icons.png" ta=
+rget=3D"_blank" title=3D"LinkedIn" width=3D"28" style=3D"height:28px; width=
+: 28px;" height=3D"28"></a></span>=0A  </div>=0A</div></div></td></tr></tab=
+le>=0A</div></td>=0A</tr></tbody></table></td></tr></tbody></table>=0A<tabl=
+e class=3D"row row-13" align=3D"center" width=3D"100%" border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspac=
+e:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content stack" a=
+lign=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pr=
+esentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;background-color=
+:#fff;border-radius:0;color:#000;width:700px;margin:0 auto" width=3D"700"><=
+tbody><tr><td class=3D"column column-1" width=3D"100%" style=3D"mso-table-l=
+space:0;mso-table-rspace:0;font-weight:400;text-align:left;padding-bottom:5=
+px;padding-left:52px;padding-right:52px;padding-top:5px;vertical-align:top"=
+><table class=3D"paragraph_block block-1" width=3D"100%" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lsp=
+ace:0;mso-table-rspace:0;word-break:break-word"><tr><td class=3D"pad" style=
+=3D"padding-bottom:12px;padding-right:24px;padding-top:12px"><div style=3D"=
+color:#5b6780;direction:ltr;font-family:Helvetica,Arial,Sans-serif;font-siz=
+e:13px;font-weight:400;letter-spacing:0;line-height:1.5;text-align:left;mso=
+-line-height-alt:20px">=0A<p style=3D"margin:0;margin-bottom:20px">=0A=C2=
+=A9 2025 Coursera Inc. All rights reserved. Coursera and the Coursera logo =
+are registered trademarks of Coursera, Inc. All other trademarks are proper=
+ty of their respective owners. Log in to manage all your notification prefe=
+rences in&nbsp;<a href=3D"https://link.coursera.org/f/a/-SH8ESbOsYkBNPmfrhv=
+HWA~~/AAQRxRA~/bJplDrmKsn4NwaFO23M_9s4U740gLTRFXtfXRxAWevTTMMSNqM4-wLY-LxJJ=
+YR6miJg1VN0ydnb0jquIia-it3bAx7y3FviLbdPOLNwqa70y19bvF3jEtWtmfMQKvvHWA58QD9M=
+5ruipYhJL4zSOqYnOho8pCbH-GU3ZjNhr_92zaKu1ZHoPQ6Bgpbrd_6FgYpjJDoNC4xNtQ1Fa_a=
+q273nSc6xNMvCBYiylMQC0rfXFJviPZqUlW3_s3GO-b4sJMcatmFCtL5AotD-7JxwYii0KmL6ST=
+zsi2gOqppWWnGn2qadpgAUzFA3hoPHVHdIn" target=3D"_blank" style=3D"text-decora=
+tion: underline; color: #5b6780;" rel=3D"noopener">Email&nbsp;Settings</a>.=
+</p>=0A<p style=3D"margin:0">=0ACoursera | 2440 W El Camino Real 5th floor,=
+ Mountain View, CA 94040 USA</p>=0A</div></td></tr></table></td></tr></tbod=
+y></table></td></tr></tbody></table>=0A</td></tr></tbody></table>=0A<!-- En=
+d -->=0A</body>=0A</html>
+--_----GU8HipEY/2BSIa0FThBpBg===_8E/95-60555-F03B8386--
+
